@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO primario -->
+  <title>VeganTrack — App de nutrición vegana con seguimiento de micronutrientes</title>
+  <meta name="description" content="Controla tu nutrición plant-based con precisión real. Escanea productos, trackea B12, hierro, zinc, calcio y vitamina D. Gratis. Sin anuncios." />
+  <meta name="keywords" content="app nutrición vegana, tracker vegano, seguimiento nutricional vegano, déficit B12 vegano, macros vegano, vitamina B12 vegano, hierro vegano, app dieta vegana, plant based tracker" />
+  <link rel="canonical" href="https://vegantrack.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vegantrack.app/" />
+  <meta property="og:title" content="VeganTrack — Nutrición vegana bajo control" />
+  <meta property="og:description" content="La única app que suma automáticamente tus suplementos a los micronutrientes del día. Escanea, registra y descubre si realmente tienes déficits." />
+  <meta property="og:image" content="https://vegantrack.app/og-image.png" />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VeganTrack — Nutrición vegana bajo control" />
+  <meta name="twitter:description" content="Trackea B12, hierro, zinc, calcio y vitamina D. Con suplementos integrados." />
+  <meta name="twitter:image" content="https://vegantrack.app/og-image.png" />
+
+  <!-- PWA / App -->
+  <meta name="theme-color" content="#16a34a" />
+  <link rel="icon" href="https://app.vegantrack.app/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://app.vegantrack.app/icon-192.png" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "VeganTrack",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web, Android, iOS",
+    "description": "App de seguimiento nutricional para dietas veganas y plant-based. Trackea macronutrientes y micronutrientes críticos como B12, hierro, zinc, calcio y vitamina D.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "url": "https://vegantrack.app",
+    "screenshot": "https://vegantrack.app/og-image.png",
+    "featureList": [
+      "Escáner de código de barras",
+      "Tracking de vitamina B12",
+      "Tracking de hierro y zinc",
+      "Tracking de calcio y vitamina D",
+      "Suplementos integrados en el cómputo diario",
+      "VeganScore diario",
+      "Sin anuncios"
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema para Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Es gratis VeganTrack?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, VeganTrack es completamente gratis. Sin anuncios, sin suscripción obligatoria, sin trucos. Puedes registrar tu alimentación, escanear productos y ver tus micronutrientes sin pagar nada."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo sé si tengo déficit de B12 siendo vegano?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "VeganTrack calcula automáticamente tu ingesta diaria de vitamina B12 a partir de los alimentos que registras y los suplementos que tomas. Si la barra de B12 no llega al 100% de la RDA (2.4 μg/día), tienes un déficit potencial que deberías revisar con tu médico."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Funciona en el móvil sin instalar nada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. VeganTrack es una Progressive Web App (PWA). Puedes usarla directamente desde el navegador de tu móvil en app.vegantrack.app. Si quieres tenerla como app instalada, toca 'Añadir a pantalla de inicio' en tu navegador."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué micronutrientes trackea VeganTrack?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "VeganTrack hace seguimiento de los micronutrientes más críticos en dieta vegana: vitamina B12, hierro, zinc, calcio, vitamina D y omega-3. Estos son los nutrientes donde las personas que siguen una dieta plant-based tienen mayor riesgo de déficit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo añadir mis suplementos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, y es una de las funcionalidades únicas de VeganTrack. Puedes registrar tus suplementos diarios (B12, D3, omega-3, hierro, zinc, calcio, yodo) y la app los suma automáticamente a tu ingesta de la dieta para darte el total real del día."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el VeganScore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El VeganScore es una puntuación de 0 a 100 que resume la calidad nutricional de tu día. Tiene en cuenta tus calorías, proteína, los tres micronutrientes más críticos (B12, vitamina D e hierro), la fibra y tu racha de días consecutivos registrados."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand-600: #16a34a;
+      --brand-700: #15803d;
+      --brand-50: #f0fdf4;
+      --brand-100: #dcfce7;
+      --surface-900: #0f172a;
+      --surface-700: #334155;
+      --surface-500: #64748b;
+      --surface-200: #e2e8f0;
+      --surface-100: #f1f5f9;
+      --surface-50: #f8fafc;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color: var(--surface-900);
+      background: #fff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── UTILIDADES ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .text-brand { color: var(--brand-600); }
+    .badge {
+      display: inline-flex; align-items: center; gap: .375rem;
+      background: var(--brand-100); color: var(--brand-700);
+      font-size: .75rem; font-weight: 600; padding: .25rem .75rem;
+      border-radius: 999px; letter-spacing: .02em;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--brand-600); color: #fff;
+      font-size: 1rem; font-weight: 600;
+      padding: .875rem 2rem; border-radius: .875rem;
+      text-decoration: none; transition: background .15s;
+    }
+    .btn-primary:hover { background: var(--brand-700); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--surface-100); color: var(--surface-700);
+      font-size: 1rem; font-weight: 600;
+      padding: .875rem 2rem; border-radius: .875rem;
+      text-decoration: none; transition: background .15s;
+    }
+    .btn-secondary:hover { background: var(--surface-200); }
+    .card {
+      background: #fff; border: 1px solid var(--surface-200);
+      border-radius: 1.25rem; padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--surface-200);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 4rem; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .logo {
+      display: flex; align-items: center; gap: .625rem;
+      font-size: 1.125rem; font-weight: 700;
+      color: var(--surface-900); text-decoration: none;
+    }
+    .logo-icon {
+      width: 2rem; height: 2rem;
+      background: var(--brand-600); border-radius: .625rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    nav { display: flex; align-items: center; gap: 1.5rem; }
+    nav a {
+      font-size: .875rem; font-weight: 500;
+      color: var(--surface-500); text-decoration: none; transition: color .15s;
+    }
+    nav a:hover { color: var(--surface-900); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--brand-50) 0%, #fff 60%);
+      padding: 5rem 0 4rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800; line-height: 1.15;
+      letter-spacing: -.02em; margin-bottom: 1.25rem;
+    }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--surface-500); max-width: 580px;
+      margin: 0 auto 2rem;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .hero-proof {
+      display: flex; gap: 2rem; justify-content: center;
+      flex-wrap: wrap; color: var(--surface-500); font-size: .875rem;
+    }
+    .hero-proof span { display: flex; align-items: center; gap: .375rem; }
+
+    /* ── PROBLEMA ── */
+    .problem { padding: 5rem 0; background: var(--surface-50); }
+    .problem h2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .problem p { color: var(--surface-500); font-size: 1.0625rem; max-width: 600px; }
+    .deficit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .deficit-card {
+      background: #fff; border: 1px solid var(--surface-200);
+      border-radius: 1rem; padding: 1.25rem;
+    }
+    .deficit-card .emoji { font-size: 2rem; margin-bottom: .5rem; }
+    .deficit-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .25rem; }
+    .deficit-card p { font-size: .875rem; color: var(--surface-500); }
+    .deficit-pct {
+      font-size: .75rem; font-weight: 700; color: #ef4444;
+      background: #fef2f2; padding: .125rem .5rem;
+      border-radius: 999px; margin-top: .5rem; display: inline-block;
+    }
+
+    /* ── FEATURES ── */
+    .features { padding: 5rem 0; }
+    .features-header { text-align: center; margin-bottom: 3rem; }
+    .features-header h2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
+      margin-bottom: .75rem;
+    }
+    .features-header p { color: var(--surface-500); font-size: 1.0625rem; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .feature-card { padding: 1.5rem; }
+    .feature-icon {
+      width: 3rem; height: 3rem; border-radius: .875rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.375rem; margin-bottom: 1rem;
+    }
+    .feature-card h3 { font-size: 1.0625rem; font-weight: 600; margin-bottom: .375rem; }
+    .feature-card p { font-size: .9375rem; color: var(--surface-500); line-height: 1.5; }
+
+    /* ── VEGANSCORE ── */
+    .score-section {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-700) 100%);
+      color: #fff;
+    }
+    .score-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center;
+    }
+    .score-inner h2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .score-inner p { opacity: .85; font-size: 1.0625rem; margin-bottom: 1.5rem; }
+    .score-items { display: flex; flex-direction: column; gap: .75rem; }
+    .score-item {
+      display: flex; align-items: center; gap: .75rem;
+      background: rgba(255,255,255,.1); border-radius: .75rem; padding: .875rem 1rem;
+    }
+    .score-item .icon { font-size: 1.25rem; }
+    .score-item .label { font-size: .9375rem; font-weight: 500; flex: 1; }
+    .score-item .pts {
+      font-size: .8125rem; font-weight: 700;
+      background: rgba(255,255,255,.2); padding: .125rem .5rem; border-radius: 999px;
+    }
+    .score-visual {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .score-ring {
+      width: 160px; height: 160px; position: relative;
+    }
+    .score-ring svg { transform: rotate(-90deg); }
+    .score-ring-text {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+    }
+    .score-ring-text .number {
+      font-size: 2.5rem; font-weight: 800; line-height: 1;
+    }
+    .score-ring-text .label { font-size: .75rem; opacity: .7; }
+
+    /* ── SUPLEMENTOS ── */
+    .supplements { padding: 5rem 0; background: var(--surface-50); }
+    .supplements-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center;
+    }
+    .supplements h2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .supplements p { color: var(--surface-500); font-size: 1.0625rem; margin-bottom: 1.5rem; }
+    .supp-pills { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .supp-pill {
+      display: flex; align-items: center; gap: .375rem;
+      background: #fff; border: 1px solid var(--surface-200);
+      border-radius: 999px; padding: .375rem .875rem;
+      font-size: .875rem; font-weight: 500;
+    }
+    .supp-demo {
+      background: #fff; border: 1px solid var(--surface-200);
+      border-radius: 1.25rem; padding: 1.5rem;
+    }
+    .supp-demo-title {
+      font-size: .75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .05em; color: var(--surface-500); margin-bottom: 1rem;
+    }
+    .micro-row {
+      display: flex; align-items: center; gap: .75rem; margin-bottom: .875rem;
+    }
+    .micro-label { font-size: .875rem; width: 100px; flex-shrink: 0; }
+    .micro-bar-bg {
+      flex: 1; height: .5rem; background: var(--surface-100);
+      border-radius: 999px; overflow: hidden;
+    }
+    .micro-bar { height: 100%; border-radius: 999px; }
+    .micro-pct { font-size: .8125rem; font-weight: 600; width: 36px; text-align: right; }
+
+    /* ── COMO FUNCIONA ── */
+    .how { padding: 5rem 0; }
+    .how h2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
+      text-align: center; margin-bottom: 3rem;
+    }
+    .steps {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem; counter-reset: steps;
+    }
+    .step { text-align: center; }
+    .step-number {
+      width: 3rem; height: 3rem; border-radius: 999px;
+      background: var(--brand-600); color: #fff;
+      font-size: 1.25rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .step h3 { font-size: 1.0625rem; font-weight: 600; margin-bottom: .375rem; }
+    .step p { font-size: .9375rem; color: var(--surface-500); }
+
+    /* ── FAQ ── */
+    .faq { padding: 5rem 0; background: var(--surface-50); }
+    .faq h2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
+      text-align: center; margin-bottom: 3rem;
+    }
+    .faq-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+      gap: 1rem; max-width: 960px; margin: 0 auto;
+    }
+    .faq-item { background: #fff; border: 1px solid var(--surface-200); border-radius: 1rem; }
+    .faq-item summary {
+      padding: 1.25rem 1.5rem; font-weight: 600; cursor: pointer;
+      list-style: none; display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-item summary::after { content: '+'; font-size: 1.25rem; color: var(--brand-600); }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { padding: 0 1.5rem 1.25rem; color: var(--surface-500); font-size: .9375rem; }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      padding: 5rem 0; text-align: center;
+      background: linear-gradient(160deg, var(--brand-50) 0%, #fff 100%);
+    }
+    .cta-final h2 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .cta-final p { color: var(--surface-500); font-size: 1.0625rem; margin-bottom: 2rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface-900); color: var(--surface-500);
+      padding: 2.5rem 0; text-align: center;
+    }
+    .footer-inner {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .footer-logo {
+      display: flex; align-items: center; gap: .5rem;
+      color: #fff; font-weight: 700; text-decoration: none;
+    }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      color: var(--surface-500); text-decoration: none;
+      font-size: .875rem; transition: color .15s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: .8125rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .score-inner,
+      .supplements-inner { grid-template-columns: 1fr; }
+      .score-visual { display: none; }
+      .faq-grid { grid-template-columns: 1fr; }
+      nav .nav-links { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+        </svg>
+      </div>
+      VeganTrack
+    </a>
+    <nav>
+      <div class="nav-links" style="display:flex;gap:1.5rem;">
+        <a href="#features">Funciones</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="https://app.vegantrack.app" class="btn-primary" style="padding:.5rem 1.25rem;font-size:.875rem;">
+        Abrir app →
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════ HERO ════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="badge" style="margin-bottom:1.25rem;">
+      🌱 Gratis · Sin anuncios · Sin suscripción obligatoria
+    </div>
+    <h1>
+      Controla tu nutrición<br />
+      <span class="text-brand">plant-based</span> con datos reales
+    </h1>
+    <p>
+      La única app que integra tus suplementos en el cómputo de micronutrientes.
+      Descubre si realmente tienes déficit de B12, hierro o vitamina D.
+    </p>
+    <div class="hero-actions">
+      <a href="https://app.vegantrack.app" class="btn-primary">
+        Empezar gratis
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#features" class="btn-secondary">Ver funciones</a>
+    </div>
+    <div class="hero-proof">
+      <span>✓ Funciona en el navegador, sin instalar nada</span>
+      <span>✓ Base de datos OpenFoodFacts</span>
+      <span>✓ Escáner de código de barras</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ PROBLEMA ════════════════════════════ -->
+<section class="problem" id="problema">
+  <div class="container">
+    <div style="max-width:600px;">
+      <div class="badge" style="margin-bottom:1rem;">El problema</div>
+      <h2>Los déficits nutricionales en dieta vegana son silenciosos</h2>
+      <p>
+        No tienes síntomas hasta que llevas meses o años con niveles bajos.
+        Las apps genéricas de nutrición no trackean los micros que más importan
+        en una dieta plant-based, y ninguna suma lo que tomas en suplementos.
+      </p>
+    </div>
+    <div class="deficit-grid">
+      <div class="deficit-card">
+        <div class="emoji">🧬</div>
+        <h3>Vitamina B12</h3>
+        <p>No se obtiene de fuentes vegetales. El déficit prolongado causa daño neurológico irreversible.</p>
+        <span class="deficit-pct">92% de veganos sin suplementar tienen niveles bajos</span>
+      </div>
+      <div class="deficit-card">
+        <div class="emoji">☀️</div>
+        <h3>Vitamina D</h3>
+        <p>Difícil de obtener sin exposición solar o suplementación, independientemente de la dieta.</p>
+        <span class="deficit-pct">Déficit en el 40% de la población general</span>
+      </div>
+      <div class="deficit-card">
+        <div class="emoji">🩸</div>
+        <h3>Hierro</h3>
+        <p>El hierro no hemo de los vegetales se absorbe peor. Las mujeres veganas tienen especial riesgo.</p>
+        <span class="deficit-pct">Biodisponibilidad 2-3x menor que el hierro hemo</span>
+      </div>
+      <div class="deficit-card">
+        <div class="emoji">🦴</div>
+        <h3>Calcio y Zinc</h3>
+        <p>Los fitatos en legumbres y cereales reducen su absorción. El tracking preciso marca la diferencia.</p>
+        <span class="deficit-pct">Ingesta media inferior al 75% de la RDA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FEATURES ════════════════════════════ -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-header">
+      <div class="badge" style="margin-bottom:1rem;">Funciones</div>
+      <h2>Todo lo que necesitas en un mismo lugar</h2>
+      <p>Diseñado específicamente para las necesidades de una dieta plant-based</p>
+    </div>
+    <div class="features-grid">
+      <div class="card feature-card">
+        <div class="feature-icon" style="background:#eff6ff;color:#3b82f6;">📷</div>
+        <h3>Escáner de código de barras</h3>
+        <p>Apunta la cámara al producto y obtén todos sus macros y micros al instante. Base de datos de millones de productos con OpenFoodFacts.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon" style="background:#f0fdf4;color:#16a34a;">🧬</div>
+        <h3>Micronutrientes críticos</h3>
+        <p>Tracking diario de B12, hierro, zinc, calcio, vitamina D y omega-3. Los seis micronutrientes donde las personas veganas tienen mayor riesgo de déficit.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon" style="background:#fefce8;color:#ca8a04;">💊</div>
+        <h3>Suplementos integrados</h3>
+        <p>Registra tus suplementos diarios y se suman automáticamente al total del día. Por fin sabes si entre dieta y suplementos llegas a la RDA real.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon" style="background:#fdf4ff;color:#a855f7;">🌿</div>
+        <h3>Alternativas veganas</h3>
+        <p>Escanea un producto no vegano y VeganTrack te sugiere automáticamente alternativas vegetales similares en macros.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon" style="background:#fff1f2;color:#f43f5e;">🍽️</div>
+        <h3>Recetas personalizadas</h3>
+        <p>Crea tus recetas habituales con sus ingredientes y añádelas al diario de un toque. Ideal para preparaciones que repites cada semana.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon" style="background:#f0fdf4;color:#16a34a;">📊</div>
+        <h3>Dashboard semanal</h3>
+        <p>Visualiza tu progreso en calorías, macros y micros a lo largo de la semana. Con VeganScore diario para saber de un vistazo si vas bien.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ VEGANSCORE ══════════════════════════ -->
+<section class="score-section">
+  <div class="container">
+    <div class="score-inner">
+      <div>
+        <div class="badge" style="background:rgba(255,255,255,.2);color:#fff;margin-bottom:1rem;">
+          Exclusivo de VeganTrack
+        </div>
+        <h2>El VeganScore: tu nutrición en un número</h2>
+        <p>
+          Cada día obtienes una puntuación de 0 a 100 que resume la calidad nutricional
+          de tu alimentación. No es una opinión — son tus datos.
+        </p>
+        <div class="score-items">
+          <div class="score-item">
+            <span class="icon">🔥</span>
+            <span class="label">Calorías en rango objetivo</span>
+            <span class="pts">30 pts</span>
+          </div>
+          <div class="score-item">
+            <span class="icon">💪</span>
+            <span class="label">Proteína suficiente</span>
+            <span class="pts">25 pts</span>
+          </div>
+          <div class="score-item">
+            <span class="icon">🧬</span>
+            <span class="label">Micros críticos cubiertos</span>
+            <span class="pts">20 pts</span>
+          </div>
+          <div class="score-item">
+            <span class="icon">🌿</span>
+            <span class="label">Fibra ≥ 30g</span>
+            <span class="pts">15 pts</span>
+          </div>
+          <div class="score-item">
+            <span class="icon">⚡</span>
+            <span class="label">Racha de días seguidos</span>
+            <span class="pts">10 pts</span>
+          </div>
+        </div>
+      </div>
+      <div class="score-visual">
+        <div class="score-ring">
+          <svg width="160" height="160" viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="68" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="12"/>
+            <circle cx="80" cy="80" r="68" fill="none" stroke="#fff" stroke-width="12"
+              stroke-linecap="round"
+              stroke-dasharray="427"
+              stroke-dashoffset="85"
+              style="transition:stroke-dashoffset 1s ease-out"/>
+          </svg>
+          <div class="score-ring-text">
+            <span class="number">80</span>
+            <span class="label">/ 100</span>
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:1.125rem;font-weight:700;">Bien 👍</div>
+          <div style="opacity:.7;font-size:.875rem;">Ejemplo de un buen día</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ SUPLEMENTOS ═════════════════════════ -->
+<section class="supplements">
+  <div class="container">
+    <div class="supplements-inner">
+      <div>
+        <div class="badge" style="margin-bottom:1rem;">La diferencia clave</div>
+        <h2>Por fin, dieta y suplementos juntos</h2>
+        <p>
+          Ninguna app de nutrición calcula tus micros sumando lo que comes
+          y lo que suplementas. VeganTrack sí. Marca cada suplemento
+          como tomado y ve el total real del día.
+        </p>
+        <div class="supp-pills">
+          <span class="supp-pill">🧬 Vitamina B12</span>
+          <span class="supp-pill">☀️ Vitamina D3</span>
+          <span class="supp-pill">🌊 Omega-3 DHA</span>
+          <span class="supp-pill">🩸 Hierro</span>
+          <span class="supp-pill">⚡ Zinc</span>
+          <span class="supp-pill">🦴 Calcio</span>
+          <span class="supp-pill">💧 Yodo</span>
+        </div>
+      </div>
+      <div class="supp-demo">
+        <div class="supp-demo-title">Micronutrientes de hoy</div>
+        <div class="micro-row">
+          <span class="micro-label" style="font-size:.8125rem;">Vitamina B12</span>
+          <div class="micro-bar-bg">
+            <div class="micro-bar" style="width:100%;background:#16a34a;"></div>
+          </div>
+          <span class="micro-pct" style="color:#16a34a;">✓</span>
+        </div>
+        <div class="micro-row">
+          <span class="micro-label" style="font-size:.8125rem;">Hierro</span>
+          <div class="micro-bar-bg">
+            <div class="micro-bar" style="width:78%;background:#f59e0b;"></div>
+          </div>
+          <span class="micro-pct" style="color:#f59e0b;">78%</span>
+        </div>
+        <div class="micro-row">
+          <span class="micro-label" style="font-size:.8125rem;">Zinc</span>
+          <div class="micro-bar-bg">
+            <div class="micro-bar" style="width:92%;background:#16a34a;"></div>
+          </div>
+          <span class="micro-pct" style="color:#16a34a;">92%</span>
+        </div>
+        <div class="micro-row">
+          <span class="micro-label" style="font-size:.8125rem;">Calcio</span>
+          <div class="micro-bar-bg">
+            <div class="micro-bar" style="width:65%;background:#f59e0b;"></div>
+          </div>
+          <span class="micro-pct" style="color:#f59e0b;">65%</span>
+        </div>
+        <div class="micro-row">
+          <span class="micro-label" style="font-size:.8125rem;">Vitamina D</span>
+          <div class="micro-bar-bg">
+            <div class="micro-bar" style="width:100%;background:#16a34a;"></div>
+          </div>
+          <span class="micro-pct" style="color:#16a34a;">✓</span>
+        </div>
+        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid #f1f5f9;font-size:.75rem;color:#64748b;display:flex;align-items:center;gap:.375rem;">
+          <span>💊</span> B12 y D cubiertos con suplemento
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ CÓMO FUNCIONA ═══════════════════════ -->
+<section class="how" id="como-funciona">
+  <div class="container">
+    <h2>Cómo funciona</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Crea tu perfil</h3>
+        <p>Introduce tus datos básicos y VeganTrack calcula automáticamente tus objetivos de calorías, proteína, carbos y grasas con la fórmula Mifflin-St Jeor.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Registra lo que comes</h3>
+        <p>Escanea el código de barras, busca por nombre o añade alimentos personalizados. Cada entrada actualiza tu diario al instante.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Marca tus suplementos</h3>
+        <p>Configura una vez qué suplementos tomas. Cada día los marcas como tomados y se suman a tus micros de la dieta.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Revisa tu VeganScore</h3>
+        <p>Al final del día tienes una puntuación clara de qué tan bien has nutrido tu cuerpo. Sin juicios, solo datos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FAQ ═════════════════════════════════ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>¿Es gratis VeganTrack?</summary>
+        <p>Sí, VeganTrack es completamente gratis. Sin anuncios, sin suscripción obligatoria, sin trucos. Puedes registrar tu alimentación, escanear productos y ver tus micronutrientes sin pagar nada.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo sé si tengo déficit de B12 siendo vegano?</summary>
+        <p>VeganTrack calcula automáticamente tu ingesta diaria de vitamina B12 sumando lo que aportan los alimentos y lo que tomas en suplementos. Si no llegas al 100% de la RDA (2,4 μg/día), tienes un déficit potencial que deberías revisar con tu médico.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Tengo que instalar algo?</summary>
+        <p>No. VeganTrack es una Progressive Web App. Funciona directamente en el navegador de tu móvil o tu ordenador. Si quieres tenerla como icono en tu pantalla de inicio, tu navegador te da la opción de instalarla sin pasar por ninguna tienda.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué micronutrientes trackea?</summary>
+        <p>Vitamina B12, hierro, zinc, calcio, vitamina D y omega-3. Son los seis micronutrientes donde las personas con dieta plant-based tienen mayor riesgo de déficit según la evidencia científica actual.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Funciona para vegetarianos o flexitarianos?</summary>
+        <p>Sí. Aunque la app está diseñada pensando en veganos, es útil para cualquier persona que quiera controlar su ingesta de micronutrientes críticos, independientemente de su dieta.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿De dónde vienen los datos nutricionales?</summary>
+        <p>De OpenFoodFacts, una base de datos colaborativa y abierta con millones de productos de todo el mundo. Puedes complementarla creando tus propios alimentos personalizados con los datos de la etiqueta.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo añadir mis recetas habituales?</summary>
+        <p>Sí. Puedes crear recetas con sus ingredientes y añadirlas al diario de un solo toque. VeganTrack calcula automáticamente los macros y micros por porción.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Mis datos están seguros?</summary>
+        <p>Sí. Los datos se guardan en Supabase con cifrado en tránsito y en reposo, y con Row Level Security activa — solo tú puedes ver tus datos. No vendemos datos a terceros.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ CTA FINAL ═══════════════════════════ -->
+<section class="cta-final">
+  <div class="container">
+    <div class="badge" style="margin-bottom:1rem;">Empieza hoy</div>
+    <h2>¿Sabes realmente qué le falta<br />a tu dieta vegana?</h2>
+    <p>Regístrate gratis y descúbrelo en menos de 5 minutos.</p>
+    <a href="https://app.vegantrack.app" class="btn-primary" style="font-size:1.125rem;padding:1rem 2.5rem;">
+      Empezar gratis →
+    </a>
+    <div style="margin-top:1.5rem;color:var(--surface-500);font-size:.875rem;">
+      Sin tarjeta de crédito · Sin anuncios · Cancela cuando quieras
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FOOTER ══════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">
+        <div class="logo-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+          </svg>
+        </div>
+        VeganTrack
+      </a>
+      <div class="footer-links">
+        <a href="https://app.vegantrack.app">Abrir app</a>
+        <a href="/privacidad">Privacidad</a>
+        <a href="/terminos">Términos</a>
+      </div>
+      <p class="footer-copy">© 2025 VeganTrack · Datos > Opinión 🌱</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
