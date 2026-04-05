@@ -118,19 +118,25 @@
   </script>
 
   <style>
+    /* ── RESET ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ── DESIGN TOKENS ── */
     :root {
       --brand-600: #16a34a;
       --brand-700: #15803d;
-      --brand-50: #f0fdf4;
-      --brand-100: #dcfce7;
       --surface-900: #0f172a;
       --surface-700: #334155;
       --surface-500: #64748b;
+      --surface-300: #cbd5e1;
       --surface-200: #e2e8f0;
       --surface-100: #f1f5f9;
-      --surface-50: #f8fafc;
+      --surface-50:  #f8fafc;
+
+      --radius:    0.875rem;
+      --radius-sm: 0.5rem;
+      --shadow:    0 1px 4px rgba(0,0,0,.07);
+      --py-section: 6rem;
     }
 
     html { scroll-behavior: smooth; }
@@ -143,35 +149,49 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── UTILIDADES ── */
+    /* ── LAYOUT ── */
     .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
     .text-brand { color: var(--brand-600); }
+
+    /* ── SECTION HEADER (componente reutilizable) ── */
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-header h2 {
+      font-size: clamp(1.625rem, 3vw, 2.375rem);
+      font-weight: 700; letter-spacing: -.018em; margin-bottom: .625rem;
+    }
+    .section-header p {
+      font-size: 1.0625rem; color: var(--surface-500);
+      max-width: 540px; margin: 0 auto;
+    }
+
+    /* ── BADGE (neutral; el verde queda para CTAs) ── */
     .badge {
       display: inline-flex; align-items: center; gap: .375rem;
-      background: var(--brand-100); color: var(--brand-700);
-      font-size: .75rem; font-weight: 600; padding: .25rem .75rem;
-      border-radius: 999px; letter-spacing: .02em;
+      background: var(--surface-100); color: var(--surface-700);
+      font-size: .6875rem; font-weight: 700; padding: .25rem .75rem;
+      border-radius: 999px; letter-spacing: .06em; text-transform: uppercase;
+      margin-bottom: 1rem;
     }
+
+    /* ── BOTONES ── */
     .btn-primary {
       display: inline-flex; align-items: center; gap: .5rem;
       background: var(--brand-600); color: #fff;
       font-size: 1rem; font-weight: 600;
-      padding: .875rem 2rem; border-radius: .875rem;
+      padding: .875rem 2rem; border-radius: var(--radius);
       text-decoration: none; transition: background .15s;
+      border: none; cursor: pointer;
     }
     .btn-primary:hover { background: var(--brand-700); }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: .5rem;
-      background: var(--surface-100); color: var(--surface-700);
-      font-size: 1rem; font-weight: 600;
-      padding: .875rem 2rem; border-radius: .875rem;
-      text-decoration: none; transition: background .15s;
+    .btn-primary:focus-visible {
+      outline: 3px solid var(--brand-600); outline-offset: 3px;
     }
-    .btn-secondary:hover { background: var(--surface-200); }
+
+    /* ── CARD (componente reutilizable) ── */
     .card {
       background: #fff; border: 1px solid var(--surface-200);
-      border-radius: 1.25rem; padding: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+      border-radius: var(--radius); padding: 1.5rem;
+      box-shadow: var(--shadow);
     }
 
     /* ── HEADER ── */
@@ -183,256 +203,295 @@
     }
     .header-inner {
       display: flex; align-items: center; justify-content: space-between;
-      height: 4rem; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem;
+      height: 3.75rem; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem;
     }
     .logo {
       display: flex; align-items: center; gap: .625rem;
-      font-size: 1.125rem; font-weight: 700;
+      font-size: 1.0625rem; font-weight: 700;
       color: var(--surface-900); text-decoration: none;
     }
     .logo-icon {
-      width: 2rem; height: 2rem;
-      background: var(--brand-600); border-radius: .625rem;
+      width: 1.875rem; height: 1.875rem;
+      background: var(--brand-600); border-radius: var(--radius-sm);
       display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
     }
     nav { display: flex; align-items: center; gap: 1.5rem; }
-    nav a {
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a {
       font-size: .875rem; font-weight: 500;
       color: var(--surface-500); text-decoration: none; transition: color .15s;
     }
-    nav a:hover { color: var(--surface-900); }
+    .nav-links a:hover { color: var(--surface-900); }
+    .nav-links a:focus-visible {
+      outline: 2px solid var(--brand-600); outline-offset: 2px; border-radius: 2px;
+    }
 
     /* ── HERO ── */
     .hero {
-      background: linear-gradient(160deg, var(--brand-50) 0%, #fff 60%);
-      padding: 5rem 0 4rem;
+      padding: calc(var(--py-section) * 1.15) 0 var(--py-section);
       text-align: center;
+      border-bottom: 1px solid var(--surface-200);
     }
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 800; line-height: 1.15;
-      letter-spacing: -.02em; margin-bottom: 1.25rem;
+      font-size: clamp(2.125rem, 5vw, 3.5rem);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -.025em; margin-bottom: 1.25rem;
     }
     .hero p {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color: var(--surface-500); max-width: 580px;
-      margin: 0 auto 2rem;
+      font-size: clamp(1rem, 2vw, 1.1875rem);
+      color: var(--surface-500); max-width: 520px;
+      margin: 0 auto 2.25rem; line-height: 1.65;
     }
-    .hero-actions {
-      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
+    .hero-action { margin-bottom: 2.75rem; }
     .hero-proof {
       display: flex; gap: 2rem; justify-content: center;
-      flex-wrap: wrap; color: var(--surface-500); font-size: .875rem;
+      flex-wrap: wrap; color: var(--surface-500); font-size: .8125rem;
     }
     .hero-proof span { display: flex; align-items: center; gap: .375rem; }
 
     /* ── PROBLEMA ── */
-    .problem { padding: 5rem 0; background: var(--surface-50); }
-    .problem h2 {
+    .problem { padding: var(--py-section) 0; background: var(--surface-50); }
+    .problem-lead { max-width: 580px; margin-bottom: 3rem; }
+    .problem-lead h2 {
       font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
-      margin-bottom: 1rem;
+      letter-spacing: -.015em; margin-bottom: .875rem;
     }
-    .problem p { color: var(--surface-500); font-size: 1.0625rem; max-width: 600px; }
+    .problem-lead p { color: var(--surface-500); font-size: 1.0625rem; }
     .deficit-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem; margin-top: 2.5rem;
+      gap: 1rem;
     }
     .deficit-card {
       background: #fff; border: 1px solid var(--surface-200);
-      border-radius: 1rem; padding: 1.25rem;
+      border-radius: var(--radius); padding: 1.375rem;
     }
-    .deficit-card .emoji { font-size: 2rem; margin-bottom: .5rem; }
-    .deficit-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .25rem; }
-    .deficit-card p { font-size: .875rem; color: var(--surface-500); }
-    .deficit-pct {
-      font-size: .75rem; font-weight: 700; color: #ef4444;
-      background: #fef2f2; padding: .125rem .5rem;
-      border-radius: 999px; margin-top: .5rem; display: inline-block;
+    .deficit-card-label {
+      display: block; font-size: .625rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .07em;
+      color: var(--surface-500); margin-bottom: .5rem;
+    }
+    .deficit-card h3 { font-size: .9375rem; font-weight: 600; margin-bottom: .375rem; }
+    .deficit-card p { font-size: .875rem; color: var(--surface-500); line-height: 1.55; }
+    .deficit-stat {
+      display: inline-block; font-size: .75rem; font-weight: 700;
+      color: var(--surface-700); background: var(--surface-100);
+      padding: .125rem .5rem; border-radius: 999px; margin-top: .625rem;
     }
 
     /* ── FEATURES ── */
-    .features { padding: 5rem 0; }
-    .features-header { text-align: center; margin-bottom: 3rem; }
-    .features-header h2 {
-      font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
-      margin-bottom: .75rem;
-    }
-    .features-header p { color: var(--surface-500); font-size: 1.0625rem; }
+    .features { padding: var(--py-section) 0; }
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
+      gap: 1px; background: var(--surface-200);
+      border: 1px solid var(--surface-200); border-radius: var(--radius);
+      overflow: hidden;
     }
-    .feature-card { padding: 1.5rem; }
-    .feature-icon {
-      width: 3rem; height: 3rem; border-radius: .875rem;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.375rem; margin-bottom: 1rem;
+    .feature-card { background: #fff; padding: 1.875rem; }
+    .feature-label {
+      display: block; font-size: .625rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .07em;
+      color: var(--surface-500); margin-bottom: .75rem;
     }
-    .feature-card h3 { font-size: 1.0625rem; font-weight: 600; margin-bottom: .375rem; }
-    .feature-card p { font-size: .9375rem; color: var(--surface-500); line-height: 1.5; }
+    .feature-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .4375rem; }
+    .feature-card p { font-size: .9375rem; color: var(--surface-500); line-height: 1.55; }
 
     /* ── VEGANSCORE ── */
     .score-section {
-      padding: 5rem 0;
-      background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-700) 100%);
+      padding: var(--py-section) 0;
+      background: var(--surface-900);
       color: #fff;
     }
     .score-inner {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 3rem; align-items: center;
+      gap: 4rem; align-items: center;
+    }
+    .score-badge {
+      display: inline-flex;
+      background: rgba(255,255,255,.12); color: rgba(255,255,255,.75);
+      font-size: .6875rem; font-weight: 700; padding: .25rem .75rem;
+      border-radius: 999px; letter-spacing: .06em; text-transform: uppercase;
+      margin-bottom: 1rem;
     }
     .score-inner h2 {
       font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
-      margin-bottom: 1rem;
+      letter-spacing: -.015em; margin-bottom: 1rem;
     }
-    .score-inner p { opacity: .85; font-size: 1.0625rem; margin-bottom: 1.5rem; }
-    .score-items { display: flex; flex-direction: column; gap: .75rem; }
+    .score-intro { color: rgba(255,255,255,.7); font-size: 1.0625rem; margin-bottom: 2rem; }
+    .score-items { display: flex; flex-direction: column; gap: .625rem; }
     .score-item {
-      display: flex; align-items: center; gap: .75rem;
-      background: rgba(255,255,255,.1); border-radius: .75rem; padding: .875rem 1rem;
+      display: flex; align-items: center; gap: .875rem;
+      background: rgba(255,255,255,.07); border-radius: var(--radius-sm);
+      padding: .8125rem 1rem;
     }
-    .score-item .icon { font-size: 1.25rem; }
-    .score-item .label { font-size: .9375rem; font-weight: 500; flex: 1; }
+    .score-item .label {
+      font-size: .9375rem; font-weight: 500; flex: 1;
+      color: rgba(255,255,255,.9);
+    }
     .score-item .pts {
       font-size: .8125rem; font-weight: 700;
-      background: rgba(255,255,255,.2); padding: .125rem .5rem; border-radius: 999px;
+      background: rgba(255,255,255,.15); padding: .125rem .5rem;
+      border-radius: 999px; color: rgba(255,255,255,.85); flex-shrink: 0;
     }
-    .score-visual {
-      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+
+    /* Score visual — barra de progreso minimalista */
+    .score-visual { display: flex; align-items: stretch; }
+    .score-display {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius); padding: 2rem; width: 100%;
+      display: flex; flex-direction: column; gap: 0;
     }
-    .score-ring {
-      width: 160px; height: 160px; position: relative;
+    .score-display-label {
+      font-size: .6875rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .07em; color: rgba(255,255,255,.45); margin-bottom: 1.25rem;
     }
-    .score-ring svg { transform: rotate(-90deg); }
-    .score-ring-text {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
+    .score-number {
+      font-size: 4.5rem; font-weight: 800; line-height: 1; letter-spacing: -.04em;
     }
-    .score-ring-text .number {
-      font-size: 2.5rem; font-weight: 800; line-height: 1;
+    .score-number span { font-size: 1.375rem; font-weight: 400; color: rgba(255,255,255,.4); }
+    .score-prog-bg {
+      height: .3125rem; background: rgba(255,255,255,.15);
+      border-radius: 999px; overflow: hidden; margin: 1.5rem 0 .875rem;
     }
-    .score-ring-text .label { font-size: .75rem; opacity: .7; }
+    .score-prog-fill {
+      height: 100%; width: 80%; background: #fff; border-radius: 999px;
+    }
+    .score-display-note { font-size: .8125rem; color: rgba(255,255,255,.45); }
 
     /* ── SUPLEMENTOS ── */
-    .supplements { padding: 5rem 0; background: var(--surface-50); }
+    .supplements { padding: var(--py-section) 0; background: var(--surface-50); }
     .supplements-inner {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 3rem; align-items: center;
+      gap: 4rem; align-items: center;
     }
     .supplements h2 {
       font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
-      margin-bottom: 1rem;
+      letter-spacing: -.015em; margin-bottom: 1rem;
     }
-    .supplements p { color: var(--surface-500); font-size: 1.0625rem; margin-bottom: 1.5rem; }
+    .supplements-body {
+      color: var(--surface-500); font-size: 1.0625rem; margin-bottom: 1.75rem;
+    }
     .supp-pills { display: flex; flex-wrap: wrap; gap: .5rem; }
     .supp-pill {
-      display: flex; align-items: center; gap: .375rem;
       background: #fff; border: 1px solid var(--surface-200);
-      border-radius: 999px; padding: .375rem .875rem;
-      font-size: .875rem; font-weight: 500;
+      border-radius: 999px; padding: .3125rem .875rem;
+      font-size: .8125rem; font-weight: 500; color: var(--surface-700);
     }
     .supp-demo {
       background: #fff; border: 1px solid var(--surface-200);
-      border-radius: 1.25rem; padding: 1.5rem;
+      border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow);
     }
     .supp-demo-title {
-      font-size: .75rem; font-weight: 600; text-transform: uppercase;
-      letter-spacing: .05em; color: var(--surface-500); margin-bottom: 1rem;
+      font-size: .6875rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .07em; color: var(--surface-500); margin-bottom: 1.25rem;
     }
     .micro-row {
-      display: flex; align-items: center; gap: .75rem; margin-bottom: .875rem;
+      display: flex; align-items: center; gap: .75rem; margin-bottom: .9375rem;
     }
-    .micro-label { font-size: .875rem; width: 100px; flex-shrink: 0; }
+    .micro-label { font-size: .8125rem; width: 96px; flex-shrink: 0; color: var(--surface-700); }
     .micro-bar-bg {
-      flex: 1; height: .5rem; background: var(--surface-100);
+      flex: 1; height: .375rem; background: var(--surface-100);
       border-radius: 999px; overflow: hidden;
     }
     .micro-bar { height: 100%; border-radius: 999px; }
     .micro-pct { font-size: .8125rem; font-weight: 600; width: 36px; text-align: right; }
-
-    /* ── COMO FUNCIONA ── */
-    .how { padding: 5rem 0; }
-    .how h2 {
-      font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
-      text-align: center; margin-bottom: 3rem;
+    .supp-note {
+      margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--surface-100);
+      font-size: .75rem; color: var(--surface-500);
     }
+
+    /* ── CÓMO FUNCIONA ── */
+    .how { padding: var(--py-section) 0; }
     .steps {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem; counter-reset: steps;
+      gap: 2.5rem;
     }
-    .step { text-align: center; }
+    .step { display: flex; flex-direction: column; align-items: flex-start; }
     .step-number {
-      width: 3rem; height: 3rem; border-radius: 999px;
-      background: var(--brand-600); color: #fff;
-      font-size: 1.25rem; font-weight: 700;
+      width: 2.25rem; height: 2.25rem; border-radius: 999px;
+      border: 1.5px solid var(--surface-200);
+      font-size: .875rem; font-weight: 700; color: var(--surface-500);
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1rem;
+      margin-bottom: 1.125rem; flex-shrink: 0;
     }
-    .step h3 { font-size: 1.0625rem; font-weight: 600; margin-bottom: .375rem; }
-    .step p { font-size: .9375rem; color: var(--surface-500); }
+    .step h3 { font-size: 1rem; font-weight: 600; margin-bottom: .4375rem; }
+    .step p { font-size: .9375rem; color: var(--surface-500); line-height: 1.55; }
 
     /* ── FAQ ── */
-    .faq { padding: 5rem 0; background: var(--surface-50); }
-    .faq h2 {
-      font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
-      text-align: center; margin-bottom: 3rem;
-    }
+    .faq { padding: var(--py-section) 0; background: var(--surface-50); }
     .faq-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
-      gap: 1rem; max-width: 960px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: .75rem; max-width: 960px; margin: 0 auto;
     }
-    .faq-item { background: #fff; border: 1px solid var(--surface-200); border-radius: 1rem; }
+    .faq-item {
+      background: #fff; border: 1px solid var(--surface-200);
+      border-radius: var(--radius);
+    }
     .faq-item summary {
-      padding: 1.25rem 1.5rem; font-weight: 600; cursor: pointer;
-      list-style: none; display: flex; justify-content: space-between; align-items: center;
+      padding: 1.125rem 1.375rem; font-weight: 600; font-size: .9375rem;
+      cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
     }
-    .faq-item summary::after { content: '+'; font-size: 1.25rem; color: var(--brand-600); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+'; font-size: 1.125rem; color: var(--surface-500);
+      flex-shrink: 0; line-height: 1;
+    }
     .faq-item[open] summary::after { content: '−'; }
-    .faq-item p { padding: 0 1.5rem 1.25rem; color: var(--surface-500); font-size: .9375rem; }
+    .faq-item summary:focus-visible {
+      outline: 2px solid var(--brand-600); outline-offset: -2px;
+      border-radius: var(--radius);
+    }
+    .faq-item p {
+      padding: .875rem 1.375rem 1.125rem;
+      border-top: 1px solid var(--surface-100);
+      color: var(--surface-500); font-size: .9375rem;
+    }
 
     /* ── CTA FINAL ── */
-    .cta-final {
-      padding: 5rem 0; text-align: center;
-      background: linear-gradient(160deg, var(--brand-50) 0%, #fff 100%);
-    }
+    .cta-final { padding: var(--py-section) 0; text-align: center; }
     .cta-final h2 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800;
-      margin-bottom: 1rem;
+      font-size: clamp(1.875rem, 4vw, 2.875rem); font-weight: 800;
+      letter-spacing: -.025em; margin-bottom: 1rem;
     }
-    .cta-final p { color: var(--surface-500); font-size: 1.0625rem; margin-bottom: 2rem; }
+    .cta-final p { color: var(--surface-500); font-size: 1.0625rem; margin-bottom: 2.25rem; }
+    .cta-meta { margin-top: 1.25rem; color: var(--surface-500); font-size: .8125rem; }
 
     /* ── FOOTER ── */
     footer {
       background: var(--surface-900); color: var(--surface-500);
-      padding: 2.5rem 0; text-align: center;
+      padding: 2.5rem 0;
     }
     .footer-inner {
-      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+      display: flex; flex-direction: column; align-items: center; gap: 1.25rem;
     }
     .footer-logo {
       display: flex; align-items: center; gap: .5rem;
-      color: #fff; font-weight: 700; text-decoration: none;
+      color: #fff; font-weight: 700; font-size: .9375rem; text-decoration: none;
     }
-    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links { display: flex; gap: 1.75rem; }
     .footer-links a {
       color: var(--surface-500); text-decoration: none;
-      font-size: .875rem; transition: color .15s;
+      font-size: .8125rem; transition: color .15s;
     }
     .footer-links a:hover { color: #fff; }
-    .footer-copy { font-size: .8125rem; }
+    .footer-links a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 2px; }
+    .footer-copy { font-size: .75rem; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
+      :root { --py-section: 4rem; }
       .score-inner,
-      .supplements-inner { grid-template-columns: 1fr; }
+      .supplements-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .score-visual { display: none; }
       .faq-grid { grid-template-columns: 1fr; }
-      nav .nav-links { display: none; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-proof { gap: .875rem; flex-direction: column; align-items: center; }
     }
   </style>
 </head>
@@ -444,7 +503,7 @@
   <div class="header-inner">
     <a href="/" class="logo">
       <div class="logo-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
           <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
         </svg>
@@ -452,7 +511,7 @@
       VeganTrack
     </a>
     <nav>
-      <div class="nav-links" style="display:flex;gap:1.5rem;">
+      <div class="nav-links">
         <a href="#features">Funciones</a>
         <a href="#como-funciona">Cómo funciona</a>
         <a href="#faq">FAQ</a>
@@ -467,9 +526,7 @@
 <!-- ═══════════════════════════════ HERO ════════════════════════════════ -->
 <section class="hero">
   <div class="container">
-    <div class="badge" style="margin-bottom:1.25rem;">
-      🌱 Gratis · Sin anuncios · Sin suscripción obligatoria
-    </div>
+    <div class="badge">Gratis · Sin anuncios</div>
     <h1>
       Controla tu nutrición<br />
       <span class="text-brand">plant-based</span> con datos reales
@@ -478,17 +535,16 @@
       La única app que integra tus suplementos en el cómputo de micronutrientes.
       Descubre si realmente tienes déficit de B12, hierro o vitamina D.
     </p>
-    <div class="hero-actions">
+    <div class="hero-action">
       <a href="https://app.vegantrack.app" class="btn-primary">
         Empezar gratis
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="#features" class="btn-secondary">Ver funciones</a>
     </div>
     <div class="hero-proof">
-      <span>✓ Funciona en el navegador, sin instalar nada</span>
-      <span>✓ Base de datos OpenFoodFacts</span>
-      <span>✓ Escáner de código de barras</span>
+      <span>Sin instalar nada</span>
+      <span>Base de datos OpenFoodFacts</span>
+      <span>Escáner de código de barras</span>
     </div>
   </div>
 </section>
@@ -496,39 +552,39 @@
 <!-- ═══════════════════════════════ PROBLEMA ════════════════════════════ -->
 <section class="problem" id="problema">
   <div class="container">
-    <div style="max-width:600px;">
-      <div class="badge" style="margin-bottom:1rem;">El problema</div>
+    <div class="problem-lead">
+      <div class="badge">El problema</div>
       <h2>Los déficits nutricionales en dieta vegana son silenciosos</h2>
       <p>
         No tienes síntomas hasta que llevas meses o años con niveles bajos.
-        Las apps genéricas de nutrición no trackean los micros que más importan
-        en una dieta plant-based, y ninguna suma lo que tomas en suplementos.
+        Las apps genéricas no trackean los micros que más importan en una dieta
+        plant-based, y ninguna suma lo que tomas en suplementos.
       </p>
     </div>
     <div class="deficit-grid">
       <div class="deficit-card">
-        <div class="emoji">🧬</div>
-        <h3>Vitamina B12</h3>
-        <p>No se obtiene de fuentes vegetales. El déficit prolongado causa daño neurológico irreversible.</p>
-        <span class="deficit-pct">92% de veganos sin suplementar tienen niveles bajos</span>
+        <span class="deficit-card-label">Vitamina B12</span>
+        <h3>Fuente exclusivamente animal</h3>
+        <p>El déficit prolongado causa daño neurológico irreversible. No se obtiene de fuentes vegetales.</p>
+        <span class="deficit-stat">92% sin suplementar tienen niveles bajos</span>
       </div>
       <div class="deficit-card">
-        <div class="emoji">☀️</div>
-        <h3>Vitamina D</h3>
-        <p>Difícil de obtener sin exposición solar o suplementación, independientemente de la dieta.</p>
-        <span class="deficit-pct">Déficit en el 40% de la población general</span>
+        <span class="deficit-card-label">Vitamina D</span>
+        <h3>Difícil sin exposición solar</h3>
+        <p>Difícil de obtener sin suplementación, independientemente de la dieta.</p>
+        <span class="deficit-stat">Déficit en el 40% de la población general</span>
       </div>
       <div class="deficit-card">
-        <div class="emoji">🩸</div>
-        <h3>Hierro</h3>
+        <span class="deficit-card-label">Hierro</span>
+        <h3>Menor biodisponibilidad</h3>
         <p>El hierro no hemo de los vegetales se absorbe peor. Las mujeres veganas tienen especial riesgo.</p>
-        <span class="deficit-pct">Biodisponibilidad 2-3x menor que el hierro hemo</span>
+        <span class="deficit-stat">Biodisponibilidad 2–3× menor que el hierro hemo</span>
       </div>
       <div class="deficit-card">
-        <div class="emoji">🦴</div>
-        <h3>Calcio y Zinc</h3>
-        <p>Los fitatos en legumbres y cereales reducen su absorción. El tracking preciso marca la diferencia.</p>
-        <span class="deficit-pct">Ingesta media inferior al 75% de la RDA</span>
+        <span class="deficit-card-label">Calcio y Zinc</span>
+        <h3>Fitatos como inhibidores</h3>
+        <p>Los fitatos en legumbres y cereales reducen la absorción. El tracking preciso marca la diferencia.</p>
+        <span class="deficit-stat">Ingesta media inferior al 75% de la RDA</span>
       </div>
     </div>
   </div>
@@ -537,41 +593,41 @@
 <!-- ═══════════════════════════════ FEATURES ════════════════════════════ -->
 <section class="features" id="features">
   <div class="container">
-    <div class="features-header">
-      <div class="badge" style="margin-bottom:1rem;">Funciones</div>
+    <div class="section-header">
+      <div class="badge">Funciones</div>
       <h2>Todo lo que necesitas en un mismo lugar</h2>
       <p>Diseñado específicamente para las necesidades de una dieta plant-based</p>
     </div>
     <div class="features-grid">
-      <div class="card feature-card">
-        <div class="feature-icon" style="background:#eff6ff;color:#3b82f6;">📷</div>
-        <h3>Escáner de código de barras</h3>
-        <p>Apunta la cámara al producto y obtén todos sus macros y micros al instante. Base de datos de millones de productos con OpenFoodFacts.</p>
+      <div class="feature-card">
+        <span class="feature-label">Escaneo</span>
+        <h3>Código de barras</h3>
+        <p>Apunta la cámara al producto y obtén todos sus macros y micros al instante. Millones de productos con OpenFoodFacts.</p>
       </div>
-      <div class="card feature-card">
-        <div class="feature-icon" style="background:#f0fdf4;color:#16a34a;">🧬</div>
+      <div class="feature-card">
+        <span class="feature-label">Seguimiento</span>
         <h3>Micronutrientes críticos</h3>
-        <p>Tracking diario de B12, hierro, zinc, calcio, vitamina D y omega-3. Los seis micronutrientes donde las personas veganas tienen mayor riesgo de déficit.</p>
+        <p>Tracking diario de B12, hierro, zinc, calcio, vitamina D y omega-3 — los seis nutrientes de mayor riesgo en dieta vegana.</p>
       </div>
-      <div class="card feature-card">
-        <div class="feature-icon" style="background:#fefce8;color:#ca8a04;">💊</div>
+      <div class="feature-card">
+        <span class="feature-label">Exclusivo</span>
         <h3>Suplementos integrados</h3>
-        <p>Registra tus suplementos diarios y se suman automáticamente al total del día. Por fin sabes si entre dieta y suplementos llegas a la RDA real.</p>
+        <p>Registra tus suplementos y se suman automáticamente al total del día. Por fin sabes si llegas a la RDA real.</p>
       </div>
-      <div class="card feature-card">
-        <div class="feature-icon" style="background:#fdf4ff;color:#a855f7;">🌿</div>
+      <div class="feature-card">
+        <span class="feature-label">Descubrimiento</span>
         <h3>Alternativas veganas</h3>
-        <p>Escanea un producto no vegano y VeganTrack te sugiere automáticamente alternativas vegetales similares en macros.</p>
+        <p>Escanea un producto no vegano y VeganTrack sugiere alternativas vegetales similares en macros.</p>
       </div>
-      <div class="card feature-card">
-        <div class="feature-icon" style="background:#fff1f2;color:#f43f5e;">🍽️</div>
+      <div class="feature-card">
+        <span class="feature-label">Organización</span>
         <h3>Recetas personalizadas</h3>
-        <p>Crea tus recetas habituales con sus ingredientes y añádelas al diario de un toque. Ideal para preparaciones que repites cada semana.</p>
+        <p>Crea recetas con sus ingredientes y añádelas al diario de un toque. VeganTrack calcula los macros por porción.</p>
       </div>
-      <div class="card feature-card">
-        <div class="feature-icon" style="background:#f0fdf4;color:#16a34a;">📊</div>
+      <div class="feature-card">
+        <span class="feature-label">Visión global</span>
         <h3>Dashboard semanal</h3>
-        <p>Visualiza tu progreso en calorías, macros y micros a lo largo de la semana. Con VeganScore diario para saber de un vistazo si vas bien.</p>
+        <p>Visualiza tu progreso en calorías, macros y micros a lo largo de la semana, con VeganScore diario.</p>
       </div>
     </div>
   </div>
@@ -582,60 +638,43 @@
   <div class="container">
     <div class="score-inner">
       <div>
-        <div class="badge" style="background:rgba(255,255,255,.2);color:#fff;margin-bottom:1rem;">
-          Exclusivo de VeganTrack
-        </div>
+        <div class="score-badge">Exclusivo de VeganTrack</div>
         <h2>El VeganScore: tu nutrición en un número</h2>
-        <p>
-          Cada día obtienes una puntuación de 0 a 100 que resume la calidad nutricional
-          de tu alimentación. No es una opinión — son tus datos.
+        <p class="score-intro">
+          Cada día obtienes una puntuación de 0 a 100 que resume la calidad
+          nutricional de tu alimentación. No es una opinión — son tus datos.
         </p>
         <div class="score-items">
           <div class="score-item">
-            <span class="icon">🔥</span>
             <span class="label">Calorías en rango objetivo</span>
             <span class="pts">30 pts</span>
           </div>
           <div class="score-item">
-            <span class="icon">💪</span>
             <span class="label">Proteína suficiente</span>
             <span class="pts">25 pts</span>
           </div>
           <div class="score-item">
-            <span class="icon">🧬</span>
             <span class="label">Micros críticos cubiertos</span>
             <span class="pts">20 pts</span>
           </div>
           <div class="score-item">
-            <span class="icon">🌿</span>
-            <span class="label">Fibra ≥ 30g</span>
+            <span class="label">Fibra ≥ 30 g</span>
             <span class="pts">15 pts</span>
           </div>
           <div class="score-item">
-            <span class="icon">⚡</span>
             <span class="label">Racha de días seguidos</span>
             <span class="pts">10 pts</span>
           </div>
         </div>
       </div>
       <div class="score-visual">
-        <div class="score-ring">
-          <svg width="160" height="160" viewBox="0 0 160 160">
-            <circle cx="80" cy="80" r="68" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="12"/>
-            <circle cx="80" cy="80" r="68" fill="none" stroke="#fff" stroke-width="12"
-              stroke-linecap="round"
-              stroke-dasharray="427"
-              stroke-dashoffset="85"
-              style="transition:stroke-dashoffset 1s ease-out"/>
-          </svg>
-          <div class="score-ring-text">
-            <span class="number">80</span>
-            <span class="label">/ 100</span>
+        <div class="score-display">
+          <div class="score-display-label">Tu VeganScore hoy</div>
+          <div class="score-number">80<span> / 100</span></div>
+          <div class="score-prog-bg">
+            <div class="score-prog-fill"></div>
           </div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:1.125rem;font-weight:700;">Bien 👍</div>
-          <div style="opacity:.7;font-size:.875rem;">Ejemplo de un buen día</div>
+          <div class="score-display-note">Bien — ejemplo de un buen día</div>
         </div>
       </div>
     </div>
@@ -647,63 +686,60 @@
   <div class="container">
     <div class="supplements-inner">
       <div>
-        <div class="badge" style="margin-bottom:1rem;">La diferencia clave</div>
+        <div class="badge">La diferencia clave</div>
         <h2>Por fin, dieta y suplementos juntos</h2>
-        <p>
-          Ninguna app de nutrición calcula tus micros sumando lo que comes
-          y lo que suplementas. VeganTrack sí. Marca cada suplemento
-          como tomado y ve el total real del día.
+        <p class="supplements-body">
+          Ninguna app calcula tus micros sumando lo que comes y lo que suplementas.
+          VeganTrack sí. Marca cada suplemento como tomado y ve el total real del día.
         </p>
         <div class="supp-pills">
-          <span class="supp-pill">🧬 Vitamina B12</span>
-          <span class="supp-pill">☀️ Vitamina D3</span>
-          <span class="supp-pill">🌊 Omega-3 DHA</span>
-          <span class="supp-pill">🩸 Hierro</span>
-          <span class="supp-pill">⚡ Zinc</span>
-          <span class="supp-pill">🦴 Calcio</span>
-          <span class="supp-pill">💧 Yodo</span>
+          <span class="supp-pill">Vitamina B12</span>
+          <span class="supp-pill">Vitamina D3</span>
+          <span class="supp-pill">Omega-3 DHA</span>
+          <span class="supp-pill">Hierro</span>
+          <span class="supp-pill">Zinc</span>
+          <span class="supp-pill">Calcio</span>
+          <span class="supp-pill">Yodo</span>
         </div>
       </div>
       <div class="supp-demo">
         <div class="supp-demo-title">Micronutrientes de hoy</div>
         <div class="micro-row">
-          <span class="micro-label" style="font-size:.8125rem;">Vitamina B12</span>
+          <span class="micro-label">Vitamina B12</span>
           <div class="micro-bar-bg">
-            <div class="micro-bar" style="width:100%;background:#16a34a;"></div>
+            <div class="micro-bar" style="width:100%;background:var(--brand-600);"></div>
           </div>
-          <span class="micro-pct" style="color:#16a34a;">✓</span>
+          <span class="micro-pct" style="color:var(--brand-600);">✓</span>
         </div>
         <div class="micro-row">
-          <span class="micro-label" style="font-size:.8125rem;">Hierro</span>
+          <span class="micro-label">Hierro</span>
           <div class="micro-bar-bg">
             <div class="micro-bar" style="width:78%;background:#f59e0b;"></div>
           </div>
           <span class="micro-pct" style="color:#f59e0b;">78%</span>
         </div>
         <div class="micro-row">
-          <span class="micro-label" style="font-size:.8125rem;">Zinc</span>
+          <span class="micro-label">Zinc</span>
           <div class="micro-bar-bg">
-            <div class="micro-bar" style="width:92%;background:#16a34a;"></div>
+            <div class="micro-bar" style="width:92%;background:var(--brand-600);"></div>
           </div>
-          <span class="micro-pct" style="color:#16a34a;">92%</span>
+          <span class="micro-pct" style="color:var(--brand-600);">92%</span>
         </div>
         <div class="micro-row">
-          <span class="micro-label" style="font-size:.8125rem;">Calcio</span>
+          <span class="micro-label">Calcio</span>
           <div class="micro-bar-bg">
             <div class="micro-bar" style="width:65%;background:#f59e0b;"></div>
           </div>
           <span class="micro-pct" style="color:#f59e0b;">65%</span>
         </div>
         <div class="micro-row">
-          <span class="micro-label" style="font-size:.8125rem;">Vitamina D</span>
+          <span class="micro-label">Vitamina D</span>
           <div class="micro-bar-bg">
-            <div class="micro-bar" style="width:100%;background:#16a34a;"></div>
+            <div class="micro-bar" style="width:100%;background:var(--brand-600);"></div>
           </div>
-          <span class="micro-pct" style="color:#16a34a;">✓</span>
+          <span class="micro-pct" style="color:var(--brand-600);">✓</span>
         </div>
-        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid #f1f5f9;font-size:.75rem;color:#64748b;display:flex;align-items:center;gap:.375rem;">
-          <span>💊</span> B12 y D cubiertos con suplemento
-        </div>
+        <div class="supp-note">B12 y D cubiertos con suplemento</div>
       </div>
     </div>
   </div>
@@ -712,22 +748,26 @@
 <!-- ═══════════════════════════════ CÓMO FUNCIONA ═══════════════════════ -->
 <section class="how" id="como-funciona">
   <div class="container">
-    <h2>Cómo funciona</h2>
+    <div class="section-header">
+      <div class="badge">Proceso</div>
+      <h2>Cómo funciona</h2>
+      <p>Empieza en menos de dos minutos</p>
+    </div>
     <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
         <h3>Crea tu perfil</h3>
-        <p>Introduce tus datos básicos y VeganTrack calcula automáticamente tus objetivos de calorías, proteína, carbos y grasas con la fórmula Mifflin-St Jeor.</p>
+        <p>Introduce tus datos básicos y VeganTrack calcula automáticamente tus objetivos con la fórmula Mifflin-St Jeor.</p>
       </div>
       <div class="step">
         <div class="step-number">2</div>
         <h3>Registra lo que comes</h3>
-        <p>Escanea el código de barras, busca por nombre o añade alimentos personalizados. Cada entrada actualiza tu diario al instante.</p>
+        <p>Escanea el código de barras, busca por nombre o añade alimentos personalizados. El diario se actualiza al instante.</p>
       </div>
       <div class="step">
         <div class="step-number">3</div>
         <h3>Marca tus suplementos</h3>
-        <p>Configura una vez qué suplementos tomas. Cada día los marcas como tomados y se suman a tus micros de la dieta.</p>
+        <p>Configura una vez qué suplementos tomas. Cada día los marcas y se suman a tus micros de la dieta.</p>
       </div>
       <div class="step">
         <div class="step-number">4</div>
@@ -741,7 +781,10 @@
 <!-- ═══════════════════════════════ FAQ ═════════════════════════════════ -->
 <section class="faq" id="faq">
   <div class="container">
-    <h2>Preguntas frecuentes</h2>
+    <div class="section-header">
+      <div class="badge">Preguntas</div>
+      <h2>Preguntas frecuentes</h2>
+    </div>
     <div class="faq-grid">
       <details class="faq-item">
         <summary>¿Es gratis VeganTrack?</summary>
@@ -782,15 +825,13 @@
 <!-- ═══════════════════════════════ CTA FINAL ═══════════════════════════ -->
 <section class="cta-final">
   <div class="container">
-    <div class="badge" style="margin-bottom:1rem;">Empieza hoy</div>
+    <div class="badge">Empieza hoy</div>
     <h2>¿Sabes realmente qué le falta<br />a tu dieta vegana?</h2>
     <p>Regístrate gratis y descúbrelo en menos de 5 minutos.</p>
-    <a href="https://app.vegantrack.app" class="btn-primary" style="font-size:1.125rem;padding:1rem 2.5rem;">
+    <a href="https://app.vegantrack.app" class="btn-primary" style="font-size:1.0625rem;padding:.9375rem 2.5rem;">
       Empezar gratis →
     </a>
-    <div style="margin-top:1.5rem;color:var(--surface-500);font-size:.875rem;">
-      Sin tarjeta de crédito · Sin anuncios · Cancela cuando quieras
-    </div>
+    <p class="cta-meta">Sin tarjeta de crédito · Sin anuncios · Cancela cuando quieras</p>
   </div>
 </section>
 
@@ -800,7 +841,7 @@
     <div class="footer-inner">
       <a href="/" class="footer-logo">
         <div class="logo-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
             <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
           </svg>
@@ -812,7 +853,7 @@
         <a href="/privacidad">Privacidad</a>
         <a href="/terminos">Términos</a>
       </div>
-      <p class="footer-copy">© 2025 VeganTrack · Datos > Opinión 🌱</p>
+      <p class="footer-copy">© 2025 VeganTrack · Datos > Opinión</p>
     </div>
   </div>
 </footer>
