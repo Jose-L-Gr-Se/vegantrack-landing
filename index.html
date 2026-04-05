@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VeganTrack - App de nutrici&oacute;n vegana con seguimiento real de micronutrientes</title>
-  <meta name="description" content="Controla tu nutrici&oacute;n plant-based con una interfaz m&aacute;s limpia y premium. Escanea productos, registra suplementos y entiende B12, hierro, zinc, calcio y vitamina D de un vistazo." />
+  <title>VeganTrack - App móvil de nutrición vegana y micronutrientes</title>
+  <meta name="description" content="VeganTrack es una app móvil de nutrición vegana para registrar rápido, entender micronutrientes y sumar suplementos en una lectura clara para tu día a día." />
   <meta name="keywords" content="app nutricion vegana, tracker vegano, seguimiento nutricional vegano, deficit B12 vegano, app dieta vegana, plant based tracker" />
   <link rel="canonical" href="https://vegantrack.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vegantrack.app/" />
-  <meta property="og:title" content="VeganTrack - Nutrici&oacute;n vegana bajo control" />
-  <meta property="og:description" content="La app que une alimentaci&oacute;n, suplementos y micronutrientes en una lectura clara y accionable." />
+  <meta property="og:title" content="VeganTrack - App móvil de nutrición vegana" />
+  <meta property="og:description" content="Registro rápido, micronutrientes claros y suplementos sumados al total real del día en una app pensada para acompañarte cada día." />
   <meta property="og:image" content="https://vegantrack.app/og-image.png" />
   <meta property="og:locale" content="es_ES" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="VeganTrack - Nutrici&oacute;n vegana bajo control" />
-  <meta name="twitter:description" content="Trackea B12, hierro, zinc, calcio y vitamina D con suplementos integrados." />
+  <meta name="twitter:title" content="VeganTrack - App móvil de nutrición vegana" />
+  <meta name="twitter:description" content="Registra en segundos y entiende B12, hierro, calcio, zinc, vitamina D y suplementos desde el móvil." />
   <meta name="twitter:image" content="https://vegantrack.app/og-image.png" />
-  <meta name="theme-color" content="#0f8a52" />
+  <meta name="theme-color" content="#128454" />
   <meta name="google-site-verification" content="fRwEMZ4SHcrSkEOYhxLDLnyobQkm0MyCAadjY2SDsog" />
   <link rel="icon" href="https://app.vegantrack.app/favicon.ico" />
   <link rel="apple-touch-icon" href="https://app.vegantrack.app/icon-192.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -31,11 +31,11 @@
     "name":"VeganTrack",
     "applicationCategory":"HealthApplication",
     "operatingSystem":"Web, Android, iOS",
-    "description":"App de seguimiento nutricional para dietas veganas y plant-based. Trackea macronutrientes y micronutrientes criticos como B12, hierro, zinc, calcio y vitamina D.",
+    "description":"Aplicación móvil de seguimiento nutricional para dietas veganas. Registra alimentos, suma suplementos y entiende micronutrientes críticos como B12, hierro, zinc, calcio y vitamina D.",
     "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},
     "url":"https://vegantrack.app",
     "screenshot":"https://vegantrack.app/og-image.png",
-    "featureList":["Escaner de codigo de barras","Tracking de vitamina B12","Tracking de hierro y zinc","Tracking de calcio y vitamina D","Suplementos integrados en el computo diario","VeganScore diario","Sin anuncios"]
+    "featureList":["Escáner de código de barras","Seguimiento de vitamina B12","Seguimiento de hierro y zinc","Seguimiento de calcio y vitamina D","Suplementos integrados en el cómputo diario","VeganScore diario","Sin anuncios"]
   }
   </script>
   <script type="application/ld+json">
@@ -43,180 +43,254 @@
     "@context":"https://schema.org",
     "@type":"FAQPage",
     "mainEntity":[
-      {"@type":"Question","name":"Es gratis VeganTrack?","acceptedAnswer":{"@type":"Answer","text":"Si. VeganTrack es completamente gratis y sin anuncios."}},
-      {"@type":"Question","name":"Como se si tengo deficit de B12?","acceptedAnswer":{"@type":"Answer","text":"La app suma alimentos y suplementos para mostrar si llegas al objetivo diario."}},
-      {"@type":"Question","name":"Funciona sin instalar nada?","acceptedAnswer":{"@type":"Answer","text":"Si. Puedes usarla en el navegador o como web app instalada."}},
-      {"@type":"Question","name":"Que micronutrientes trackea?","acceptedAnswer":{"@type":"Answer","text":"Vitamina B12, hierro, zinc, calcio, vitamina D y omega-3."}}
+      {"@type":"Question","name":"¿Es gratis VeganTrack?","acceptedAnswer":{"@type":"Answer","text":"Sí. VeganTrack es completamente gratis y sin anuncios."}},
+      {"@type":"Question","name":"¿Cómo sé si tengo déficit de B12?","acceptedAnswer":{"@type":"Answer","text":"La app suma alimentos y suplementos para mostrar si llegas al objetivo diario."}},
+      {"@type":"Question","name":"¿Funciona sin instalar nada?","acceptedAnswer":{"@type":"Answer","text":"Sí. Puedes usarla en el navegador o añadirla a la pantalla de inicio como app web."}},
+      {"@type":"Question","name":"¿Qué micronutrientes registra?","acceptedAnswer":{"@type":"Answer","text":"Vitamina B12, hierro, zinc, calcio, vitamina D y omega-3."}}
     ]
   }
   </script>
   <style>
-    :root{--bg:#f4efe6;--bg2:#fbfaf6;--surface:rgba(255,255,255,.78);--surface-2:#fff;--surface-dark:#111720;--surface-dark-2:#17212c;--text:#141922;--muted:#5f6674;--line:rgba(20,25,34,.1);--accent:#0f8a52;--accent-dark:#0b6f41;--shadow-lg:0 32px 80px rgba(18,23,31,.09);--shadow-md:0 18px 45px rgba(18,23,31,.07);--shadow-sm:0 10px 24px rgba(18,23,31,.06);--radius-xl:2rem;--radius-lg:1.5rem;--radius-md:1rem;--section:clamp(4.5rem,7vw,7.5rem)}
-    *,*:before,*:after{box-sizing:border-box}
+    :root{
+      --bg:#f7f4ee;
+      --card:rgba(255,255,255,.82);
+      --ink:#172018;
+      --muted:#637164;
+      --line:rgba(23,32,24,.09);
+      --green:#128454;
+      --green-deep:#0d6b43;
+      --shadow-lg:0 30px 80px rgba(23,32,24,.1);
+      --shadow-md:0 18px 48px rgba(23,32,24,.08);
+      --shadow-sm:0 10px 24px rgba(23,32,24,.06);
+      --section-gap:clamp(3.5rem,8vw,6.5rem);
+    }
+    *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;min-width:320px;font-family:"Manrope","Avenir Next","Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(215,164,90,.16),transparent 28%),radial-gradient(circle at 85% 12%,rgba(15,138,82,.16),transparent 22%),linear-gradient(180deg,#f7f3ea 0%,#fdfcf9 34%,#f7f5ef 100%);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(180deg,rgba(0,0,0,.55),transparent 88%);opacity:.35}
+    body{
+      margin:0;min-width:320px;
+      font-family:"DM Sans","Segoe UI",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left,rgba(201,163,109,.18),transparent 26%),
+        radial-gradient(circle at 88% 10%,rgba(18,132,84,.14),transparent 24%),
+        linear-gradient(180deg,#f7f4ee 0%,#fdfbf7 40%,#f8f5ef 100%);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";position:fixed;inset:0;pointer-events:none;
+      background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+      background-size:22px 22px;mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 86%);opacity:.35;
+    }
     a{color:inherit;text-decoration:none}
+    img,svg{display:block;max-width:100%}
     section[id]{scroll-margin-top:6rem}
-    .container{width:min(1160px,calc(100% - 2rem));margin:0 auto}
-    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .85rem;border-radius:999px;border:1px solid rgba(20,25,34,.08);background:rgba(255,255,255,.72);box-shadow:var(--shadow-sm);backdrop-filter:blur(16px);color:var(--muted);font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-    .eyebrow:before{content:"";width:.5rem;height:.5rem;border-radius:999px;background:linear-gradient(135deg,var(--accent),#8dd0a8);box-shadow:0 0 0 .28rem rgba(15,138,82,.12)}
-    .section-intro{display:grid;gap:1rem;max-width:700px;margin-bottom:3rem}
-    .section-intro h2{margin:0;font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.04;letter-spacing:-.05em}
-    .section-intro p,.feature p,.faq-item p,.step p,.metric p,.supp-copy p,.score-copy p,.cta-box p,.problem p{margin:0;color:var(--muted)}
-    .btn-row{display:flex;flex-wrap:wrap;gap:.9rem}
-    .btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.35rem;padding:.95rem 1.45rem;border-radius:999px;border:1px solid transparent;font-size:.96rem;font-weight:800;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background-color .18s ease}
-    .btn-primary{background:linear-gradient(135deg,var(--accent) 0%,#2aa96a 100%);color:#fff;box-shadow:0 18px 30px rgba(15,138,82,.24)}
-    .btn-secondary{background:rgba(255,255,255,.72);border-color:rgba(20,25,34,.08);box-shadow:var(--shadow-sm);backdrop-filter:blur(16px)}
-    .btn-primary:hover,.btn-secondary:hover,.logo:hover,.card:hover,.faq-item:hover,.step:hover{transform:translateY(-2px)}
-    .btn-primary:focus-visible,.btn-secondary:focus-visible,.nav a:focus-visible,.faq-item summary:focus-visible,.logo:focus-visible,.footer-links a:focus-visible{outline:3px solid rgba(15,138,82,.28);outline-offset:3px}
-    header{position:sticky;top:0;z-index:40;padding:1rem 0 0}
-    .header-shell{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 1.2rem;border:1px solid rgba(20,25,34,.08);border-radius:999px;background:rgba(255,255,255,.74);box-shadow:var(--shadow-sm);backdrop-filter:blur(20px)}
-    .logo{display:inline-flex;align-items:center;gap:.75rem;font-weight:800;letter-spacing:-.03em;transition:transform .18s ease}
-    .logo-mark{width:2.25rem;height:2.25rem;display:grid;place-items:center;border-radius:.9rem;background:linear-gradient(135deg,var(--accent) 0%,#7bc891 100%);box-shadow:0 14px 24px rgba(15,138,82,.24);color:#fff;flex-shrink:0}
+    .container{width:min(1040px,calc(100% - 1.25rem));margin:0 auto}
+    h1,h2,h3,.eyebrow,.btn-primary,.btn-secondary,.logo-copy strong{font-family:"Bricolage Grotesque","DM Sans",sans-serif}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .85rem;border-radius:999px;
+      border:1px solid var(--line);background:rgba(255,255,255,.72);box-shadow:var(--shadow-sm);
+      color:var(--muted);font-size:.72rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;backdrop-filter:blur(16px);
+    }
+    .eyebrow::before{
+      content:"";width:.5rem;height:.5rem;border-radius:999px;background:linear-gradient(135deg,var(--green),#7fc59f);
+      box-shadow:0 0 0 .28rem rgba(18,132,84,.12);
+    }
+    .btn-row{display:flex;flex-wrap:wrap;gap:.8rem}
+    .btn-primary,.btn-secondary{
+      display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:3.15rem;padding:.9rem 1.3rem;
+      border-radius:999px;border:1px solid transparent;font-size:.95rem;font-weight:700;
+      transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background-color .18s ease;
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--green) 0%,#299868 100%);color:#fff;box-shadow:0 18px 30px rgba(18,132,84,.22)}
+    .btn-secondary{background:rgba(255,255,255,.74);border-color:var(--line);box-shadow:var(--shadow-sm);color:var(--ink);backdrop-filter:blur(16px)}
+    .btn-primary:hover,.btn-secondary:hover,.panel:hover,.faq-item:hover,.step:hover,.logo:hover{transform:translateY(-2px)}
+    .btn-primary:focus-visible,.btn-secondary:focus-visible,.nav a:focus-visible,.faq-item summary:focus-visible,.logo:focus-visible,.footer-links a:focus-visible{outline:3px solid rgba(18,132,84,.24);outline-offset:3px}
+    header{position:sticky;top:0;z-index:40;padding:.85rem 0 0}
+    .header-shell{
+      display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 1rem;
+      border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.72);
+      box-shadow:var(--shadow-sm);backdrop-filter:blur(20px);
+    }
+    .logo{display:inline-flex;align-items:center;gap:.75rem;transition:transform .18s ease}
+    .logo-mark{
+      width:2.2rem;height:2.2rem;display:grid;place-items:center;flex-shrink:0;border-radius:.9rem;
+      background:linear-gradient(135deg,var(--green) 0%,#7bc79a 100%);box-shadow:0 14px 24px rgba(18,132,84,.22);color:#fff;
+    }
     .logo-copy{display:grid;gap:.05rem}
-    .logo-copy strong{font-size:1rem}
-    .logo-copy span{color:var(--muted);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
-    nav,.nav{display:flex;align-items:center;gap:1rem}
-    .nav{flex-wrap:wrap}
-    .nav a{color:var(--muted);font-size:.92rem;font-weight:700}
-    .nav a:hover,.footer-links a:hover{color:var(--text)}
-    .nav-cta{min-height:2.9rem;padding-inline:1.2rem;font-size:.88rem}
-    main{display:grid;gap:var(--section);padding-bottom:3rem}
-    .hero{padding-top:2.5rem}
-    .hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(320px,.98fr);gap:clamp(2rem,4vw,4rem);align-items:center}
-    .hero-copy{display:grid;gap:1.35rem}
-    .hero-copy h1{margin:0;font-size:clamp(2.9rem,7vw,5.75rem);line-height:.95;letter-spacing:-.075em;max-width:10.5ch}
-    .hero-copy p{margin:0;max-width:58ch;color:var(--muted);font-size:1.08rem}
-    .hero-copy p strong{color:var(--text)}
-    .metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:.4rem}
-    .card,.metric,.feature,.problem,.preview,.score-box,.supp-box,.cta-box{border:1px solid rgba(20,25,34,.08);background:rgba(255,255,255,.8);box-shadow:var(--shadow-sm)}
-    .metric{padding:1.2rem;border-radius:var(--radius-lg);display:grid;gap:.55rem;backdrop-filter:blur(16px);min-height:9rem}
-    .metric strong{font-size:1.1rem;letter-spacing:-.05em}
-    .preview-wrap{position:relative;isolation:isolate;min-height:38rem}
-    .preview-wrap:before{content:"";position:absolute;inset:8% 8% 6%;border-radius:2.4rem;background:radial-gradient(circle at top right,rgba(215,164,90,.3),transparent 36%),radial-gradient(circle at left center,rgba(15,138,82,.18),transparent 44%),linear-gradient(180deg,rgba(255,255,255,.78),rgba(255,255,255,.4));filter:blur(8px);z-index:-2}
-    .preview-wrap:after{content:"";position:absolute;inset:18% 10% auto auto;width:14rem;height:14rem;border-radius:999px;background:radial-gradient(circle,rgba(15,138,82,.18),transparent 68%);z-index:-1}
-    .float{position:absolute;z-index:2;min-width:11rem;padding:.95rem 1rem;border-radius:1.3rem;border:1px solid rgba(20,25,34,.08);background:rgba(255,255,255,.82);box-shadow:var(--shadow-md);backdrop-filter:blur(20px);animation:drift 7s ease-in-out infinite}
-    .float.top{top:1rem;right:-1rem;animation-delay:-2s}
-    .float.bottom{left:-1rem;bottom:1rem;animation-delay:-4s}
-    .float span{display:inline-flex;margin-bottom:.4rem;color:var(--muted);font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
-    .float strong{display:block;font-size:1.08rem;letter-spacing:-.04em;margin-bottom:.18rem}
-    .float p{margin:0;color:var(--muted);font-size:.82rem}
-    .preview{padding:1.15rem;border-radius:2.2rem;background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(246,243,236,.88));box-shadow:var(--shadow-lg);backdrop-filter:blur(20px)}
-    .preview-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.2rem .15rem 1rem}
-    .preview-top strong{font-size:.96rem;letter-spacing:-.04em}
-    .tag{display:inline-flex;align-items:center;gap:.45rem;padding:.5rem .8rem;border-radius:999px;background:rgba(20,25,34,.05);color:var(--muted);font-size:.78rem;font-weight:700}
-    .preview-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem}
-    .ui{display:grid;gap:.9rem;padding:1.1rem;border-radius:1.5rem;border:1px solid rgba(20,25,34,.08);background:rgba(255,255,255,.9)}
-    .ui.hero-card{min-height:14.75rem;background:radial-gradient(circle at top right,rgba(15,138,82,.16),transparent 42%),linear-gradient(180deg,#f8fcf9 0%,#fff 100%)}
-    .kicker,.problem-top,.feature-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;color:var(--muted);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-    .big-score small{display:block;font-size:.82rem;color:var(--muted);margin-bottom:.35rem}
-    .big-score strong{display:inline-flex;align-items:baseline;gap:.35rem;font-size:3.6rem;line-height:.9;letter-spacing:-.08em}
-    .big-score strong span{color:rgba(20,25,34,.42);font-size:1.15rem;font-weight:700}
-    .pill{display:inline-flex;align-items:center;padding:.42rem .78rem;border-radius:999px;background:rgba(20,25,34,.06);font-size:.78rem;font-weight:700}
-    .pill-row{display:flex;flex-wrap:wrap;gap:.55rem}
-    .delta{align-self:start;padding:.45rem .7rem;border-radius:999px;background:rgba(15,138,82,.1);color:var(--accent-dark);font-size:.8rem;font-weight:800}
-    .progress{height:.65rem;border-radius:999px;background:rgba(20,25,34,.08);overflow:hidden}
-    .progress span,.bar span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#0f8a52,#7bc891)}
-    .bar span.warn{background:linear-gradient(90deg,#d7a45a,#f0c98b)}
-    .stack{display:grid;gap:1rem}
-    .list,.micro,.score-list,.check{list-style:none;padding:0;margin:0;display:grid;gap:.8rem}
-    .micro li,.score-list li,.check li{display:grid;gap:.38rem}
-    .micro div{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-size:.9rem;font-weight:700}
-    .list li{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:.75rem;border-bottom:1px solid rgba(20,25,34,.08);font-size:.88rem}
-    .list li:last-child{border-bottom:0;padding-bottom:0}
-    .list strong{font-size:.92rem}
-    .list span{color:var(--muted);font-size:.8rem}
-    .bar{height:.45rem;border-radius:999px;overflow:hidden;background:rgba(20,25,34,.08)}
-    .section{position:relative}
-    .problem-shell{display:grid;grid-template-columns:minmax(0,.9fr) minmax(18rem,.7fr);gap:1.2rem;align-items:end;margin-bottom:2rem}
-    .note{padding:1.5rem;border-radius:var(--radius-lg);background:linear-gradient(180deg,rgba(18,23,31,.96),rgba(26,34,48,.96));box-shadow:var(--shadow-md);color:#fff}
-    .note span{display:inline-flex;margin-bottom:.7rem;color:rgba(255,255,255,.62);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-    .note p{color:rgba(255,255,255,.86)}
-    .problem-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
-    .problem{padding:1.5rem;border-radius:var(--radius-lg);display:grid;gap:.9rem;min-height:15.5rem}
-    .chip{display:inline-flex;align-items:center;padding:.35rem .65rem;border-radius:999px;background:rgba(15,138,82,.1);color:var(--accent-dark);font-size:.74rem;font-weight:800}
-    .problem h3,.feature h3,.step h3,.score-copy h2,.supp-copy h2,.cta-box h2{margin:0;letter-spacing:-.05em}
-    .features-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem}
-    .feature{padding:1.5rem;border-radius:1.85rem;display:grid;gap:1rem;overflow:hidden}
-    .feature.large{grid-column:span 7;min-height:23.5rem;background:radial-gradient(circle at top right,rgba(15,138,82,.16),transparent 40%),linear-gradient(180deg,rgba(255,255,255,.96),rgba(245,252,247,.92))}
-    .feature.tall{grid-column:span 5;min-height:23.5rem;background:radial-gradient(circle at top left,rgba(215,164,90,.22),transparent 35%),linear-gradient(180deg,rgba(255,255,255,.96),rgba(249,245,237,.96))}
-    .feature.half{grid-column:span 4;min-height:18.5rem}
-    .feature.dark{background:radial-gradient(circle at top right,rgba(68,205,131,.18),transparent 40%),linear-gradient(180deg,#10161f 0%,#17212c 100%);color:#fff;border-color:rgba(255,255,255,.06)}
-    .feature.dark p,.feature.dark .feature-top,.feature.dark .mini span,.feature.dark .data span:last-child{color:rgba(255,255,255,.7)}
-    .feature.dark .pill{background:rgba(255,255,255,.1);color:#fff}
-    .feature h3{font-size:clamp(1.45rem,2.3vw,2.2rem);line-height:1.02}
-    .mini-box,.stats,.data-box{margin-top:auto;padding:1rem;border-radius:1.3rem;border:1px solid rgba(20,25,34,.08);background:rgba(255,255,255,.8)}
-    .feature.dark .mini-box,.feature.dark .stats,.feature.dark .data-box{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
-    .browser{display:flex;align-items:center;gap:.35rem;margin-bottom:.85rem}
-    .browser span{width:.55rem;height:.55rem;border-radius:999px;background:rgba(20,25,34,.16)}
-    .search,.mini,.data{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    .search{padding:.8rem .9rem;border-radius:999px;background:rgba(20,25,34,.06);color:var(--muted);font-size:.84rem;margin-bottom:.85rem}
-    .mini{padding:.78rem 0;border-bottom:1px solid rgba(20,25,34,.08)}
-    .mini:last-child,.data:last-child{border-bottom:0;padding-bottom:0}
-    .mini strong,.data{font-size:.9rem}
-    .mini span{color:var(--muted);font-size:.78rem}
-    .stats{display:grid;gap:.8rem}
-    .stat{padding:.95rem 1rem;border-radius:1.05rem;background:rgba(20,25,34,.05);display:grid;gap:.25rem}
-    .feature.dark .stat{background:rgba(255,255,255,.08)}
-    .data-box{display:grid;gap:.8rem}
-    .data{padding-bottom:.8rem;border-bottom:1px solid rgba(20,25,34,.08);font-weight:700}
-    .score-shell{display:grid;grid-template-columns:minmax(0,.95fr) minmax(300px,.85fr);gap:clamp(1.5rem,4vw,3rem);padding:clamp(1.6rem,3vw,2.4rem);border-radius:2.2rem;background:radial-gradient(circle at top right,rgba(68,205,131,.18),transparent 30%),linear-gradient(180deg,#111720 0%,#182230 100%);box-shadow:var(--shadow-lg);color:#fff}
-    .score-copy{display:grid;gap:1rem;align-content:start}
-    .score-copy .eyebrow,.cta-box .eyebrow{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.08);box-shadow:none;color:rgba(255,255,255,.72)}
-    .score-copy h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.02;max-width:10.5ch}
-    .score-copy p{color:rgba(255,255,255,.72);max-width:50ch}
-    .score-list li{grid-template-columns:auto 1fr auto;display:grid;align-items:center;gap:.9rem;padding:.9rem 1rem;border-radius:1rem;background:rgba(255,255,255,.06)}
-    .score-list li:before,.check li:before{content:"";width:.7rem;height:.7rem;border-radius:999px;background:linear-gradient(135deg,#62d18c,#fff);box-shadow:0 0 0 .3rem rgba(98,209,140,.14)}
-    .score-list strong{font-size:.92rem}
-    .score-list span{color:rgba(255,255,255,.56);font-size:.82rem;font-weight:700}
-    .score-box{padding:1.25rem;border-radius:1.5rem;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.08);box-shadow:none;display:grid;gap:1.2rem}
-    .ring-wrap{display:grid;place-items:center;padding:.4rem 0 .2rem}
-    .ring{width:min(18rem,100%);aspect-ratio:1;border-radius:999px;display:grid;place-items:center;background:radial-gradient(circle at center,#111720 54%,transparent 55%),conic-gradient(#62d18c 0 295deg,rgba(255,255,255,.12) 295deg 360deg);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
-    .ring span{display:grid;place-items:center;width:63%;aspect-ratio:1;border-radius:999px;background:rgba(255,255,255,.06);font-size:3.5rem;font-weight:800;letter-spacing:-.08em}
-    .ring small{display:block;font-size:.9rem;color:rgba(255,255,255,.56)}
-    .legend{display:grid;gap:.8rem}
-    .legend div{padding:.95rem 1rem;border-radius:1rem;background:rgba(255,255,255,.06);display:flex;justify-content:space-between;gap:1rem}
-    .legend strong{font-size:.92rem}
-    .legend span{color:rgba(255,255,255,.64);font-size:.82rem;font-weight:700}
-    .supp-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(320px,.94fr);gap:clamp(1.5rem,4vw,3rem);align-items:center}
+    .logo-copy strong{font-size:1rem;letter-spacing:-.03em}
+    .logo-copy span{font-size:.72rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+    nav{display:flex;align-items:center;gap:1rem}
+    .nav{display:none;align-items:center;gap:1rem}
+    .nav a{font-size:.9rem;font-weight:700;color:var(--muted)}
+    .nav a:hover,.footer-links a:hover{color:var(--ink)}
+    .nav-cta{min-height:2.85rem;padding-inline:1.1rem}
+    main{display:grid;gap:var(--section-gap);padding:1.25rem 0 3rem}
+    .section-intro{display:grid;gap:.95rem;max-width:42rem;margin-bottom:2rem}
+    .section-intro h2,.score-copy h2,.supp-copy h2,.cta-box h2{margin:0;font-size:clamp(2rem,7vw,3.4rem);line-height:1;letter-spacing:-.05em}
+    .section-intro p,.hero-copy p,.benefit-card p,.feature-copy p,.score-copy p,.supp-copy p,.faq-item p,.step p,.cta-box p,.meta-strip p{margin:0;color:var(--muted)}
+    .hero{padding-top:.5rem}
+    .hero-grid{display:grid;gap:2rem;align-items:center}
+    .hero-copy{display:grid;gap:1.1rem}
+    .hero-copy h1{margin:0;font-size:clamp(3rem,12vw,5.2rem);line-height:.94;letter-spacing:-.075em;max-width:10ch}
+    .hero-copy p{font-size:1.02rem;max-width:35rem}
+    .hero-copy strong{color:var(--ink)}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:.5rem}
+    .hero-meta span,.meta-chip,.install-chip{
+      display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .75rem;border-radius:999px;
+      background:rgba(255,255,255,.72);border:1px solid var(--line);box-shadow:var(--shadow-sm);
+      font-size:.8rem;font-weight:700;color:var(--muted);
+    }
+    .hero-proof{display:grid;gap:.8rem}
+    .proof-item,.benefit-card,.feature-row,.score-shell,.supp-shell,.step,.faq-item,.cta-box,.panel,.meta-strip{
+      border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow-sm);backdrop-filter:blur(16px);
+    }
+    .proof-item{padding:1rem 1.1rem;border-radius:1.2rem}
+    .proof-item strong{display:block;margin-bottom:.2rem;font-size:1rem;letter-spacing:-.03em}
+    .phone-stage{display:grid;justify-items:center;gap:1rem;position:relative}
+    .phone-badge{
+      width:min(100%,18rem);padding:.9rem 1rem;border-radius:1.2rem;background:rgba(255,255,255,.82);
+      border:1px solid var(--line);box-shadow:var(--shadow-md);color:var(--muted);
+    }
+    .phone-badge strong{display:block;color:var(--ink);font-size:1rem;margin-bottom:.15rem}
+    .phone-device{
+      width:min(100%,22rem);padding:.75rem;border-radius:2.2rem;background:linear-gradient(180deg,#131813 0%,#202720 100%);
+      box-shadow:0 26px 60px rgba(23,32,24,.22);
+    }
+    .phone-screen{
+      border-radius:1.75rem;background:radial-gradient(circle at top right,rgba(18,132,84,.14),transparent 34%),linear-gradient(180deg,#fcfbf7 0%,#f4f1e9 100%);
+      padding:1rem .95rem 1.05rem;min-height:39rem;display:grid;gap:.9rem;overflow:hidden;
+    }
+    .statusbar,.phone-head,.phone-score-top,.nutrient-row,.meal-item,.bottom-tabs,.feature-head,.supp-total,.faq-item summary,.footer{
+      display:flex;align-items:center;justify-content:space-between;gap:.8rem;
+    }
+    .statusbar{font-size:.75rem;color:var(--muted);font-weight:700}
+    .status-icons,.browser-dots{display:flex;gap:.3rem}
+    .status-icons span,.browser-dots span{width:.38rem;height:.38rem;border-radius:999px;background:rgba(23,32,24,.4)}
+    .phone-head h3,.feature-copy h3,.benefit-card h3,.step h3{margin:0;letter-spacing:-.04em}
+    .phone-head h3{font-size:1.55rem}
+    .phone-head p{margin:.18rem 0 0;color:var(--muted);font-size:.9rem}
+    .phone-chip-row,.score-bullets,.supp-pills{display:flex;flex-wrap:wrap;gap:.5rem}
+    .phone-chip,.score-bullets span,.supp-pills span{
+      display:inline-flex;align-items:center;padding:.38rem .7rem;border-radius:999px;background:rgba(23,32,24,.06);font-size:.76rem;font-weight:700;
+    }
+    .phone-card,.mini-card,.supp-card{
+      padding:.95rem;border-radius:1.25rem;background:rgba(255,255,255,.8);border:1px solid rgba(23,32,24,.07);box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+    }
+    .phone-score strong{display:block;font-size:3rem;line-height:.9;letter-spacing:-.08em}
+    .phone-score span{font-size:.82rem;color:var(--muted);font-weight:700}
+    .score-pill{padding:.42rem .65rem;border-radius:999px;background:rgba(18,132,84,.1);color:var(--green-deep);font-size:.78rem;font-weight:700}
+    .nutrition-list,.meal-list,.mini-list{list-style:none;padding:0;margin:0;display:grid;gap:.75rem}
+    .nutrition-list li,.mini-list li{display:grid;gap:.3rem}
+    .nutrient-row,.meal-item{font-size:.88rem;font-weight:700}
+    .nutrient-track{height:.42rem;border-radius:999px;background:rgba(23,32,24,.08);overflow:hidden}
+    .nutrient-fill{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#128454,#87cbab)}
+    .nutrient-fill.warn{background:linear-gradient(90deg,#c9a36d,#e4c08b)}
+    .taken-row{padding:.8rem .9rem;border-radius:1rem;background:rgba(18,132,84,.08);font-size:.86rem}
+    .meal-list li{padding-bottom:.72rem;border-bottom:1px solid rgba(23,32,24,.08)}
+    .meal-list li:last-child{padding-bottom:0;border-bottom:0}
+    .meal-item span,.feature-head span,.supp-head span,.mini-card small{color:var(--muted);font-size:.8rem}
+    .bottom-tabs{margin-top:auto;padding-top:.3rem;color:var(--muted);font-size:.75rem;font-weight:700}
+    .bottom-tabs span{padding:.35rem .55rem;border-radius:999px}
+    .bottom-tabs span:first-child{background:rgba(18,132,84,.1);color:var(--green-deep)}
+    .meta-strip{padding:1.1rem 1.15rem;border-radius:1.4rem}
+    .meta-strip strong{display:block;margin-bottom:.3rem;font-size:1.05rem;letter-spacing:-.03em}
+    .benefit-grid,.steps,.faq-grid{display:grid;gap:1rem}
+    .benefit-card,.step{padding:1.2rem 1.15rem;border-radius:1.4rem}
+    .benefit-card h3{font-size:1.1rem}
+    .feature-stack{display:grid;gap:1rem}
+    .feature-row{padding:1.1rem;border-radius:1.6rem;display:grid;gap:1rem}
+    .feature-copy{display:grid;gap:.8rem}
+    .feature-label,.step-label{font-size:.75rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+    .feature-copy h3{font-size:clamp(1.55rem,6vw,2.3rem)}
+    .mini-phone{
+      width:min(100%,17rem);padding:.6rem;border-radius:1.8rem;background:linear-gradient(180deg,#152018 0%,#202b23 100%);
+      box-shadow:0 18px 42px rgba(23,32,24,.16);
+    }
+    .mini-screen{padding:.85rem;border-radius:1.4rem;background:linear-gradient(180deg,#fcfbf7 0%,#f3efe6 100%);display:grid;gap:.75rem}
+    .feature-head strong,.supp-head strong{font-size:1rem;letter-spacing:-.03em}
+    .mini-list li{font-size:.84rem;font-weight:700}
+    .mini-list span{color:var(--muted);font-size:.76rem}
+    .score-shell{
+      padding:1.35rem;border-radius:1.8rem;
+      background:radial-gradient(circle at top right,rgba(102,208,154,.15),transparent 30%),linear-gradient(180deg,#131a14 0%,#1c251e 100%);
+      box-shadow:var(--shadow-lg);color:#fff;
+    }
+    .score-copy{display:grid;gap:1rem;margin-bottom:1.2rem}
+    .score-copy .eyebrow,.cta-box .eyebrow{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.08);box-shadow:none;color:rgba(255,255,255,.7)}
+    .score-copy p,.cta-box p{color:rgba(255,255,255,.72)}
+    .score-panel{
+      width:min(100%,17rem);margin:0 auto;padding:.75rem;border-radius:1.8rem;
+      background:linear-gradient(180deg,#101510 0%,#1a211b 100%);box-shadow:0 18px 42px rgba(0,0,0,.2);
+    }
+    .score-screen{padding:1rem;border-radius:1.35rem;background:rgba(255,255,255,.06);display:grid;gap:.9rem}
+    .score-screen strong{font-size:3rem;line-height:.9;letter-spacing:-.08em}
+    .score-screen p,.score-screen li,.supp-card p{margin:0;color:rgba(255,255,255,.72)}
+    .score-screen ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+    .score-screen li{padding:.7rem .8rem;border-radius:1rem;background:rgba(255,255,255,.06);font-size:.84rem}
+    .supp-shell{display:grid;gap:1.2rem}
     .supp-copy{display:grid;gap:1rem}
-    .supp-copy h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.02;max-width:10.5ch}
-    .check li{grid-template-columns:auto 1fr;display:grid;gap:.8rem;align-items:start;color:var(--text);font-size:.95rem}
-    .supp-box{padding:1.3rem;border-radius:1.75rem;background:radial-gradient(circle at top right,rgba(15,138,82,.12),transparent 42%),linear-gradient(180deg,rgba(255,255,255,.94),rgba(248,245,237,.94));box-shadow:var(--shadow-md)}
-    .supp-top{display:flex;justify-content:space-between;gap:1rem;align-items:center;margin-bottom:1rem}
-    .supp-top strong{font-size:1.22rem;letter-spacing:-.04em}
-    .supp-top span{color:var(--muted);font-size:.84rem;font-weight:700}
-    .supp-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-bottom:1rem}
-    .supp-col{padding:1rem;border-radius:1.2rem;border:1px solid rgba(20,25,34,.08);background:rgba(255,255,255,.78);display:grid;gap:.8rem}
-    .supp-col h3{margin:0;font-size:1rem;letter-spacing:-.04em}
-    .supp-total{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.1rem;border-radius:1.3rem;background:linear-gradient(135deg,rgba(15,138,82,.12),rgba(255,255,255,.92));border:1px solid rgba(15,138,82,.16)}
-    .supp-total strong{font-size:2.1rem;line-height:1;letter-spacing:-.08em}
-    .supp-total span{color:var(--muted);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
-    .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
-    .step{padding:1.45rem;border-radius:var(--radius-lg);background:rgba(255,255,255,.78);box-shadow:var(--shadow-sm);display:grid;gap:.9rem}
-    .num{width:2.8rem;height:2.8rem;border-radius:999px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(15,138,82,.12),rgba(215,164,90,.18));color:var(--accent-dark);font-weight:800;box-shadow:inset 0 0 0 1px rgba(15,138,82,.12)}
-    .faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-    .faq-item{border-radius:var(--radius-lg);border:1px solid rgba(20,25,34,.08);background:rgba(255,255,255,.82);box-shadow:var(--shadow-sm);overflow:hidden;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
-    .faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.35rem;list-style:none;cursor:pointer;font-weight:800;font-size:.96rem}
+    .supp-board{display:grid;gap:.9rem}
+    .supp-card{padding:1rem 1.05rem;border-radius:1.3rem}
+    .supp-head{display:flex;justify-content:space-between;gap:.8rem;align-items:flex-start;margin-bottom:.8rem}
+    .supp-total{padding:1rem 1.05rem;border-radius:1.25rem;background:linear-gradient(135deg,rgba(18,132,84,.12),rgba(255,255,255,.92));border:1px solid rgba(18,132,84,.16)}
+    .supp-total strong{font-size:2rem;line-height:1;letter-spacing:-.08em}
+    .steps{counter-reset:step}
+    .step{gap:.75rem}
+    .step-num{
+      width:2.5rem;height:2.5rem;border-radius:999px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(18,132,84,.12),rgba(201,163,109,.22));
+      color:var(--green-deep);font-weight:700;
+    }
+    .faq-item{border-radius:1.4rem;overflow:hidden}
+    .faq-item summary{
+      padding:1.15rem 1.2rem;list-style:none;cursor:pointer;font-family:"Bricolage Grotesque","DM Sans",sans-serif;font-size:1rem;
+    }
     .faq-item summary::-webkit-details-marker{display:none}
-    .faq-item summary:after{content:"+";width:2rem;height:2rem;border-radius:999px;display:grid;place-items:center;background:rgba(20,25,34,.06);color:var(--muted);flex-shrink:0;font-size:1.1rem;line-height:1}
-    .faq-item[open] summary:after{content:"-"}
-    .faq-item p{padding:0 1.35rem 1.25rem;font-size:.94rem}
-    .cta-box{padding:clamp(2rem,4vw,3rem);border-radius:2.2rem;background:radial-gradient(circle at top left,rgba(215,164,90,.26),transparent 30%),radial-gradient(circle at bottom right,rgba(68,205,131,.18),transparent 25%),linear-gradient(180deg,#0f151d 0%,#182230 100%);box-shadow:var(--shadow-lg);color:#fff;display:grid;gap:1.2rem;justify-items:start}
-    .cta-box h2{font-size:clamp(2.3rem,5vw,4rem);line-height:.98;max-width:12ch}
-    .cta-box p{color:rgba(255,255,255,.72);max-width:45ch;font-size:1.02rem}
-    .meta{color:rgba(255,255,255,.58);font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .faq-item summary::after{
+      content:"+";width:1.9rem;height:1.9rem;border-radius:999px;display:grid;place-items:center;background:rgba(23,32,24,.06);color:var(--muted);flex-shrink:0;
+    }
+    .faq-item[open] summary::after{content:"-"}
+    .faq-item p{padding:0 1.2rem 1.15rem}
+    .cta-box{
+      padding:1.6rem;border-radius:1.9rem;background:radial-gradient(circle at top left,rgba(201,163,109,.2),transparent 28%),radial-gradient(circle at bottom right,rgba(102,208,154,.18),transparent 26%),linear-gradient(180deg,#121913 0%,#1c261e 100%);
+      box-shadow:var(--shadow-lg);color:#fff;display:grid;gap:1rem;
+    }
+    .meta-note{color:rgba(255,255,255,.62);font-size:.84rem;font-weight:700}
     footer{padding:0 0 2.5rem}
-    .footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding:1.15rem 0 0}
+    .footer{padding-top:1rem;flex-wrap:wrap;color:var(--muted)}
     .footer-links{display:flex;flex-wrap:wrap;gap:1rem}
-    .footer-links a{color:var(--muted);font-size:.9rem;font-weight:700}
-    .footer p{margin:0;color:var(--muted);font-size:.82rem;font-weight:700}
-    @keyframes drift{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-10px,0)}}
-    @media (max-width:1080px){.hero-grid,.score-shell,.supp-grid,.problem-shell{grid-template-columns:1fr}.hero-copy h1,.score-copy h2,.supp-copy h2,.cta-box h2{max-width:none}.preview-wrap{min-height:auto}.float.top{right:0}.float.bottom{left:0}.problem-grid,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.feature.large,.feature.tall{grid-column:span 12}.feature.half{grid-column:span 6}}
-    @media (max-width:820px){header{padding-top:.8rem}.header-shell{border-radius:1.5rem;align-items:flex-start}.nav{display:none}.metrics,.faq-grid,.supp-cols,.problem-grid,.steps{grid-template-columns:1fr}.preview-grid,.features-grid{grid-template-columns:1fr}.feature.large,.feature.tall,.feature.half{grid-column:span 1}.float{position:static;animation:none}.preview-wrap{display:grid;gap:1rem}}
-    @media (max-width:560px){.container{width:min(1160px,calc(100% - 1.1rem))}.header-shell,.preview,.score-shell,.cta-box{border-radius:1.45rem}.hero{padding-top:1.6rem}.hero-copy h1{font-size:clamp(2.55rem,16vw,4rem)}.btn-row{flex-direction:column}.btn-primary,.btn-secondary,.nav-cta{width:100%}.supp-total,.footer{align-items:flex-start;flex-direction:column}.ring span{font-size:2.8rem}.big-score strong{font-size:3rem}}
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+    .footer-links a{font-size:.9rem;font-weight:700}
+    .footer p{margin:0;font-size:.82rem;font-weight:700}
+    @media (min-width:760px){
+      .container{width:min(1040px,calc(100% - 2rem))}
+      .hero-proof,.benefit-grid,.steps,.faq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .supp-board{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .btn-row .btn-primary,.btn-row .btn-secondary{width:auto}
+    }
+    @media (min-width:920px){
+      .nav{display:flex}
+      .hero-grid{grid-template-columns:minmax(0,1fr) minmax(320px,370px)}
+      .hero-proof{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .benefit-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .feature-row{grid-template-columns:minmax(0,1fr) minmax(270px,320px);align-items:center;padding:1.25rem}
+      .feature-row:nth-child(even) .feature-phone{order:-1}
+      .score-shell{display:grid;grid-template-columns:minmax(0,.95fr) minmax(260px,320px);align-items:center;gap:1.5rem}
+      .score-copy{margin-bottom:0}
+      .supp-shell{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:start}
+      .steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+      .faq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width:559px){
+      .btn-row{flex-direction:column}
+      .btn-primary,.btn-secondary,.nav-cta{width:100%}
+      .header-shell{border-radius:1.4rem}
+      .phone-screen{min-height:37rem}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+    }
   </style>
 </head>
 <body>
@@ -227,16 +301,19 @@
           <span class="logo-mark" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
           </span>
-          <span class="logo-copy"><strong>VeganTrack</strong><span>Plant-based nutrition</span></span>
+          <span class="logo-copy">
+            <strong>VeganTrack</strong>
+            <span>Nutrición vegana diaria</span>
+          </span>
         </a>
         <nav>
           <div class="nav">
-            <a href="#problema">Problema</a>
+            <a href="#problema">Por qu&eacute;</a>
             <a href="#features">Funciones</a>
-            <a href="#como-funciona">C&oacute;mo funciona</a>
+            <a href="#como-funciona">Uso diario</a>
             <a href="#faq">FAQ</a>
           </div>
-          <a href="https://app.vegantrack.app" class="btn-primary nav-cta">Abrir app <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></a>
+          <a href="https://app.vegantrack.app" class="btn-primary nav-cta">Abrir app</a>
         </nav>
       </div>
     </div>
@@ -246,165 +323,255 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">Nutrici&oacute;n vegana, sin adivinar</span>
-            <h1>Una lectura m&aacute;s clara de lo que come tu cuerpo.</h1>
-            <p>VeganTrack convierte alimentos, suplementos y h&aacute;bitos en una vista limpia de tus micronutrientes cr&iacute;ticos. <strong>No solo cuenta calor&iacute;as:</strong> te dice si tu dieta plant-based est&aacute; realmente cubierta.</p>
+            <span class="eyebrow">App móvil de nutrición vegana</span>
+            <h1>Tu nutrición vegana, al día y en el móvil.</h1>
+            <p>VeganTrack se abre en vertical, registra en segundos y te ayuda a entender con calma si <strong>B12, hierro, calcio, zinc, vitamina D y suplementos</strong> van bien en tu día.</p>
             <div class="btn-row">
-              <a href="https://app.vegantrack.app" class="btn-primary">Empezar gratis <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></a>
-              <a href="#features" class="btn-secondary">Ver recorrido</a>
+              <a href="https://app.vegantrack.app" class="btn-primary">Abrir app</a>
+              <a href="https://app.vegantrack.app" class="btn-secondary">Probar en el m&oacute;vil</a>
             </div>
-            <div class="metrics">
-              <article class="metric"><strong>Micros que s&iacute; importan</strong><p>B12, hierro, zinc, calcio, vitamina D y omega-3 en un solo sitio.</p></article>
-              <article class="metric"><strong>Suplementos integrados</strong><p>La suma real del d&iacute;a incluye lo que comes y lo que suplementas.</p></article>
-              <article class="metric"><strong>Sin ruido</strong><p>Gratis, sin anuncios y listo para usar en m&oacute;vil o escritorio.</p></article>
+            <div class="hero-meta">
+              <span>App web</span>
+              <span>Sin anuncios</span>
+              <span>Añadir a pantalla de inicio</span>
+            </div>
+            <div class="hero-proof">
+              <article class="proof-item">
+                <strong>Registro r&aacute;pido</strong>
+                <p>Escanea, busca o marca suplementos con un gesto rápido y natural.</p>
+              </article>
+              <article class="proof-item">
+                <strong>Lectura clara</strong>
+                <p>Micronutrientes y total real del día visibles de un vistazo, con una lectura limpia.</p>
+              </article>
+              <article class="proof-item">
+                <strong>Uso diario</strong>
+                <p>Hecha para acompañarte cada día, con una rutina breve que se integra en tu ritmo real.</p>
+              </article>
             </div>
           </div>
-          <div class="preview-wrap">
-            <div class="float top"><span>B12 cubierta</span><strong>100% hoy</strong><p>Dieta + suplemento en el mismo total.</p></div>
-            <div class="float bottom"><span>Consistencia</span><strong>11 d&iacute;as seguidos</strong><p>Una racha visible cambia el comportamiento.</p></div>
-            <div class="preview" aria-label="Vista previa de VeganTrack">
-              <div class="preview-top"><strong>VeganTrack</strong><span class="tag">Hoy &middot; 5 registros</span></div>
-              <div class="preview-grid">
-                <div class="ui hero-card">
-                  <div class="kicker"><span>Resumen diario</span><span class="delta">+12 vs ayer</span></div>
-                  <div class="big-score"><small>VeganScore</small><strong>82 <span>/100</span></strong></div>
-                  <div class="progress"><span style="width:82%;"></span></div>
-                  <div class="pill-row"><span class="pill">Prote&iacute;na cubierta</span><span class="pill">Fibra en rango</span><span class="pill">B12 completa</span></div>
+
+          <div class="phone-stage">
+            <div class="phone-badge">
+              <strong>Lista para tu pantalla de inicio</strong>
+              <p>Ábrela desde el navegador y guárdala como una app más en tu teléfono.</p>
+            </div>
+            <div class="phone-device" aria-label="Vista previa m&oacute;vil de VeganTrack">
+              <div class="phone-screen">
+                <div class="statusbar">
+                  <span>09:41</span>
+                  <div class="status-icons"><span></span><span></span><span></span></div>
                 </div>
-                <div class="stack">
-                  <div class="ui">
-                    <div class="kicker"><span>Micronutrientes</span><span>Hoy</span></div>
-                    <ul class="micro">
-                      <li><div><span>Vitamina B12</span><span>100%</span></div><div class="bar"><span style="width:100%;"></span></div></li>
-                      <li><div><span>Hierro</span><span>78%</span></div><div class="bar"><span class="warn" style="width:78%;"></span></div></li>
-                      <li><div><span>Vitamina D</span><span>100%</span></div><div class="bar"><span style="width:100%;"></span></div></li>
-                      <li><div><span>Calcio</span><span>65%</span></div><div class="bar"><span class="warn" style="width:65%;"></span></div></li>
-                    </ul>
+                <div class="phone-head">
+                  <div>
+                    <h3>Hoy</h3>
+                    <p>Diario, suplementos y resumen</p>
                   </div>
-                  <div class="ui">
-                    <div class="kicker"><span>Integraci&oacute;n real</span><span>Total</span></div>
-                    <ul class="micro">
-                      <li><div><span>Dieta</span><span>58%</span></div></li>
-                      <li><div><span>Suplementos</span><span>+34%</span></div></li>
-                    </ul>
-                    <div class="kicker" style="padding-top:.2rem;border-top:1px solid rgba(20,25,34,.08);"><span>Total diario</span><span>92%</span></div>
+                  <span class="meta-chip">Diario de hoy</span>
+                </div>
+                <div class="phone-chip-row">
+                  <span class="phone-chip">Diario</span>
+                  <span class="phone-chip">Suplementos</span>
+                  <span class="phone-chip">Resumen</span>
+                </div>
+                <div class="phone-card">
+                  <div class="phone-score-top">
+                    <div class="phone-score">
+                      <strong>82</strong>
+                      <span>VeganScore de hoy</span>
+                    </div>
+                    <span class="score-pill">+12 vs ayer</span>
                   </div>
                 </div>
-                <div class="ui">
-                  <div class="kicker"><span>Registros de hoy</span><span>4 items</span></div>
-                  <ul class="list">
-                    <li><div><strong>Porridge + soja</strong><span>Desayuno</span></div><span>08:14</span></li>
-                    <li><div><strong>Tofu bowl</strong><span>Comida</span></div><span>14:06</span></li>
-                    <li><div><strong>B12 + D3</strong><span>Suplementos</span></div><span>15:10</span></li>
-                    <li><div><strong>Wrap de hummus</strong><span>Cena</span></div><span>21:02</span></li>
+                <div class="phone-card">
+                  <ul class="nutrition-list">
+                    <li>
+                      <div class="nutrient-row"><span>Vitamina B12</span><span>100%</span></div>
+                      <div class="nutrient-track"><span class="nutrient-fill" style="width:100%;"></span></div>
+                    </li>
+                    <li>
+                      <div class="nutrient-row"><span>Hierro</span><span>78%</span></div>
+                      <div class="nutrient-track"><span class="nutrient-fill warn" style="width:78%;"></span></div>
+                    </li>
+                    <li>
+                      <div class="nutrient-row"><span>Calcio</span><span>65%</span></div>
+                      <div class="nutrient-track"><span class="nutrient-fill warn" style="width:65%;"></span></div>
+                    </li>
                   </ul>
+                </div>
+                <div class="taken-row">B12 y D3 marcados como tomados &middot; sumados al total del d&iacute;a</div>
+                <div class="phone-card">
+                  <ul class="meal-list">
+                    <li><div class="meal-item"><strong>Porridge + soja</strong><span>08:14</span></div></li>
+                    <li><div class="meal-item"><strong>Tofu bowl</strong><span>14:06</span></div></li>
+                    <li><div class="meal-item"><strong>B12 + D3</strong><span>15:10</span></div></li>
+                    <li><div class="meal-item"><strong>Wrap de hummus</strong><span>21:02</span></div></li>
+                  </ul>
+                </div>
+                <div class="bottom-tabs">
+                  <span>Diario</span>
+                  <span>Buscar</span>
+                  <span>Resumen</span>
+                  <span>Perfil</span>
                 </div>
               </div>
             </div>
+            <div class="phone-badge">
+              <strong>Un gesto diario, no una tarea</strong>
+              <p>Registrar, marcar suplementos y entender el día cabe en un momento corto desde el teléfono.</p>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="section" id="problema">
-      <div class="container">
-        <div class="problem-shell">
-          <div class="section-intro">
-            <span class="eyebrow">El problema</span>
-            <h2>Las apps gen&eacute;ricas cuentan macros. Tu salud necesita contexto.</h2>
-            <p>Los d&eacute;ficits m&aacute;s delicados en una dieta vegana suelen ser silenciosos. Si solo ves calor&iacute;as o prote&iacute;na, faltan micronutrientes, biodisponibilidad y el papel real de los suplementos.</p>
-          </div>
-          <aside class="note"><span>Lo que cambia la lectura</span><p>Lo dif&iacute;cil no es solo comer vegano. Lo dif&iacute;cil es saber, con calma y sin fricci&oacute;n, si realmente est&aacute;s cubriendo lo importante.</p></aside>
-        </div>
-        <div class="problem-grid">
-          <article class="problem card"><div class="problem-top"><span>Vitamina B12</span><span class="chip">Clave</span></div><h3>No se improvisa.</h3><p>Sin seguimiento y suplementaci&oacute;n adecuada, el d&eacute;ficit puede pasar desapercibido durante mucho tiempo.</p></article>
-          <article class="problem card"><div class="problem-top"><span>Vitamina D</span><span class="chip">40% con niveles bajos</span></div><h3>La dieta no siempre basta.</h3><p>Integrar exposici&oacute;n solar y suplemento en la misma lectura evita decisiones a ciegas.</p></article>
-          <article class="problem card"><div class="problem-top"><span>Hierro</span><span class="chip">2-3x menor absorci&oacute;n</span></div><h3>La cifra no lo es todo.</h3><p>El hierro no hemo se absorbe peor, por eso el simple total bruto dice menos de lo que parece.</p></article>
-          <article class="problem card"><div class="problem-top"><span>Calcio y zinc</span><span class="chip">Seguimiento fino</span></div><h3>Los peque&ntilde;os huecos suman.</h3><p>Fitatos, rachas irregulares y comidas repetidas hacen que cubrir micronutrientes sea m&aacute;s complejo.</p></article>
         </div>
       </div>
     </section>
 
+    <section class="section" id="problema">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">Pensada para tu ritmo</span>
+          <h2>Una herramienta clara para registrar, seguir y entender tu día.</h2>
+          <p>VeganTrack acompaña una rutina breve desde el móvil: anotar lo que comes, marcar suplementos y ver si estás cubriendo lo esencial sin complicarte.</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <h3>Rápida de abrir</h3>
+            <p>Entras, registras y sigues. La experiencia está pensada para acompañarte sin alargar el momento.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>Clara de leer</h3>
+            <p>Los micronutrientes importantes aparecen ordenados y tranquilos, para que sepas dónde estás sin ruido.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>Útil de repetir</h3>
+            <p>Cuanto más fácil es volver cada día, más valor tiene el seguimiento. VeganTrack está hecha para eso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
     <section class="section" id="features">
       <div class="container">
         <div class="section-intro">
           <span class="eyebrow">Funciones</span>
-          <h2>Una interfaz m&aacute;s editorial para un producto con datos de verdad.</h2>
-          <p>La landing ahora ense&ntilde;a el producto con m&oacute;dulos amplios, mejor ritmo visual y una jerarqu&iacute;a m&aacute;s premium inspirada en layouts de marca muy cuidados.</p>
+          <h2>Todo lo importante cabe en una rutina breve desde el teléfono.</h2>
+          <p>Buscar, registrar, marcar suplementos y revisar el día: lo esencial aparece en pantallas compactas, claras y fáciles de repetir.</p>
         </div>
-        <div class="features-grid">
-          <article class="feature large card">
-            <div class="feature-top"><span>Escaneo y registro</span><span>OpenFoodFacts + custom foods</span></div>
-            <h3>Escanea, busca o crea. Todo entra r&aacute;pido y se entiende mejor.</h3>
-            <p>El flujo de entrada es inmediato, pero el valor est&aacute; en lo que ocurre despu&eacute;s: macros y micros se convierten en una vista mucho m&aacute;s legible.</p>
-            <div class="mini-box">
-              <div class="browser"><span></span><span></span><span></span></div>
-              <div class="search"><span>Buscar alimento, marca o c&oacute;digo de barras</span><strong>Buscar</strong></div>
-              <div class="mini"><div><strong>Tofu firme</strong><span>Prote&iacute;na alta &middot; calcio fortificado</span></div><strong>+ a&ntilde;adir</strong></div>
-              <div class="mini"><div><strong>Bebida de soja</strong><span>B12 + vitamina D</span></div><strong>+ a&ntilde;adir</strong></div>
-              <div class="mini"><div><strong>Avena</strong><span>Fibra y carbohidrato estable</span></div><strong>+ a&ntilde;adir</strong></div>
+        <div class="feature-stack">
+          <article class="feature-row">
+            <div class="feature-copy">
+              <span class="feature-label">1 &middot; Registro r&aacute;pido</span>
+              <h3>Escanear, buscar o a&ntilde;adir una comida debe sentirse inmediato.</h3>
+              <p>VeganTrack est&aacute; hecha para ese gesto corto del d&iacute;a: sacar el m&oacute;vil, encontrar el alimento y seguir con tu rutina.</p>
+            </div>
+            <div class="feature-phone">
+              <div class="mini-phone">
+                <div class="mini-screen">
+                  <div class="feature-head"><strong>Buscar alimento</strong><span>R&aacute;pido</span></div>
+                  <div class="mini-card">
+                    <small>Buscar por nombre o c&oacute;digo de barras</small>
+                  </div>
+                  <ul class="mini-list">
+                    <li><span>Tofu firme</span>Prote&iacute;na alta</li>
+                    <li><span>Bebida de soja</span>B12 + vitamina D</li>
+                    <li><span>Avena</span>Fibra y energ&iacute;a estable</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </article>
 
-          <article class="feature tall dark card">
-            <div class="feature-top"><span>Visi&oacute;n global</span><span>Dashboard semanal</span></div>
-            <h3>Un panel que resume la semana sin castigar con ruido.</h3>
-            <p>VeganTrack muestra tendencia, racha y cobertura real para que el seguimiento se sienta m&aacute;s cerca de un producto premium y menos de una hoja de c&aacute;lculo.</p>
-            <div class="stats">
-              <div class="stat"><strong>Promedio semanal: 78/100</strong><span>Subiendo durante 4 d&iacute;as seguidos</span></div>
-              <div class="stat"><strong>Hierro pendiente</strong><span>3 d&iacute;as bajo objetivo, visible de inmediato</span></div>
-              <div class="stat"><strong>B12 estable</strong><span>Cobertura completa gracias al suplemento diario</span></div>
+          <article class="feature-row">
+            <div class="feature-copy">
+              <span class="feature-label">2 &middot; Micronutrientes</span>
+              <h3>Lo importante se lee en vertical y sin interpretaciones raras.</h3>
+              <p>B12, hierro, calcio, zinc o vitamina D aparecen como una lectura clara, hecha para resolverse en segundos desde la mano.</p>
             </div>
-            <div class="pill-row"><span class="pill">Tendencia</span><span class="pill">Racha</span><span class="pill">Contexto</span></div>
-          </article>
-
-          <article class="feature half card">
-            <div class="feature-top"><span>Exclusivo</span><span>Suplementos integrados</span></div>
-            <h3>Lo que comes y lo que suplementas ya no viven separados.</h3>
-            <p>Esa suma es la principal diferencia del producto y ahora tambi&eacute;n queda mucho m&aacute;s evidente en la propia landing.</p>
-            <div class="data-box">
-              <div class="data"><span>B12</span><span>28% dieta + 72% suplemento</span></div>
-              <div class="data"><span>Vitamina D</span><span>12% dieta + 88% suplemento</span></div>
-              <div class="data"><span>Omega-3</span><span>65% dieta + 20% DHA</span></div>
+            <div class="feature-phone">
+              <div class="mini-phone">
+                <div class="mini-screen">
+                  <div class="feature-head"><strong>Micronutrientes</strong><span>Hoy</span></div>
+                  <ul class="nutrition-list">
+                    <li><div class="nutrient-row"><span>B12</span><span>100%</span></div><div class="nutrient-track"><span class="nutrient-fill" style="width:100%;"></span></div></li>
+                    <li><div class="nutrient-row"><span>Hierro</span><span>78%</span></div><div class="nutrient-track"><span class="nutrient-fill warn" style="width:78%;"></span></div></li>
+                    <li><div class="nutrient-row"><span>Calcio</span><span>65%</span></div><div class="nutrient-track"><span class="nutrient-fill warn" style="width:65%;"></span></div></li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </article>
 
-          <article class="feature half card">
-            <div class="feature-top"><span>Alternativas</span><span>Descubrimiento</span></div>
-            <h3>Escaneas un producto y entiendes qu&eacute; cambiar, no solo si es vegano.</h3>
-            <p>La app puede sugerir opciones plant-based similares en macros, ayudando a convertir el descubrimiento en una acci&oacute;n r&aacute;pida.</p>
-            <div class="pill-row"><span class="pill">Comparaci&oacute;n r&aacute;pida</span><span class="pill">Macros similares</span><span class="pill">Mejor elecci&oacute;n</span></div>
+          <article class="feature-row">
+            <div class="feature-copy">
+              <span class="feature-label">3 &middot; Suplementos sumados</span>
+              <h3>La diferencia clave no est&aacute; en un discurso. Est&aacute; en el total real del d&iacute;a.</h3>
+              <p>Marcas el suplemento y la app lo integra con tu comida para darte un total diario mucho más fiel.</p>
+            </div>
+            <div class="feature-phone">
+              <div class="mini-phone">
+                <div class="mini-screen">
+                  <div class="feature-head"><strong>Suplementos</strong><span>Integrados</span></div>
+                  <div class="mini-card">
+                    <small>B12 + D3 marcados</small>
+                  </div>
+                  <ul class="mini-list">
+                    <li><span>B12</span>22% dieta + 78% suplemento</li>
+                    <li><span>Vitamina D</span>12% dieta + 88% suplemento</li>
+                    <li><span>Omega-3</span>65% comida + 20% DHA</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </article>
 
-          <article class="feature half card">
-            <div class="feature-top"><span>Organizaci&oacute;n</span><span>Recetas y h&aacute;bitos</span></div>
-            <h3>Guardar tus comidas frecuentes reduce fricci&oacute;n y mejora constancia.</h3>
-            <p>Recetas propias, ingredientes personalizados y acceso m&aacute;s directo al diario hacen que volver cada d&iacute;a resulte natural.</p>
-            <div class="pill-row"><span class="pill">Recetas</span><span class="pill">Porciones</span><span class="pill">Uso diario</span></div>
+          <article class="feature-row">
+            <div class="feature-copy">
+              <span class="feature-label">4 &middot; Añadir a inicio</span>
+              <h3>Si te encaja, se queda en tu pantalla de inicio y entra en tu ritmo diario.</h3>
+              <p>Puedes abrirla desde el navegador y guardarla en el inicio para volver cada día con la misma facilidad que a cualquier otra app.</p>
+            </div>
+            <div class="feature-phone">
+              <div class="mini-phone">
+                <div class="mini-screen">
+                  <div class="feature-head"><strong>Añadir a inicio</strong><span>App web</span></div>
+                  <div class="mini-card">
+                    <small>Abrir desde el navegador</small>
+                  </div>
+                  <ul class="mini-list">
+                    <li><span>Paso 1</span>Abrir VeganTrack en el navegador</li>
+                    <li><span>Paso 2</span>Tocar compartir o men&uacute;</li>
+                    <li><span>Paso 3</span>A&ntilde;adir a pantalla de inicio</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
     </section>
+
     <section class="section">
       <div class="container">
         <div class="score-shell">
           <div class="score-copy">
             <span class="eyebrow">VeganScore</span>
-            <h2>Un solo n&uacute;mero para leer el d&iacute;a con criterio.</h2>
-            <p>El VeganScore reduce complejidad sin simplificar demasiado. Sirve como resumen ejecutivo para entender si calor&iacute;as, prote&iacute;na, micros y consistencia van bien.</p>
-            <ul class="score-list">
-              <li><strong>Calor&iacute;as en rango</strong><span>30 pts</span></li>
-              <li><strong>Prote&iacute;na suficiente</strong><span>25 pts</span></li>
-              <li><strong>Micros cubiertos</strong><span>20 pts</span></li>
-              <li><strong>Fibra &ge; 30 g</strong><span>15 pts</span></li>
-              <li><strong>Racha diaria</strong><span>10 pts</span></li>
-            </ul>
+            <h2>Una lectura breve para cerrar el d&iacute;a con criterio.</h2>
+            <p>El VeganScore resume calorías, proteína, micronutrientes y consistencia para darte una señal clara desde el móvil al cerrar el día.</p>
+            <div class="score-bullets">
+              <span>Calor&iacute;as</span>
+              <span>Prote&iacute;na</span>
+              <span>Micros cr&iacute;ticos</span>
+              <span>Racha</span>
+            </div>
           </div>
-          <div class="score-box">
-            <div class="ring-wrap"><div class="ring"><span>82<small>/100</small></span></div></div>
-            <div class="legend">
-              <div><strong>Lectura actual</strong><span>Buen d&iacute;a, con hierro por cerrar</span></div>
-              <div><strong>Fortaleza</strong><span>B12, D y prote&iacute;na bien cubiertas</span></div>
-              <div><strong>Acci&oacute;n simple</strong><span>Subir calcio y hierro en la cena</span></div>
+          <div class="score-panel">
+            <div class="score-screen">
+              <div class="feature-head"><strong>Hoy</strong><span>82/100</span></div>
+              <strong>82</strong>
+              <p>Buen d&iacute;a, con hierro y calcio todav&iacute;a algo justos.</p>
+              <ul>
+                <li>B12 y D bien cubiertas</li>
+                <li>Prote&iacute;na y fibra en rango</li>
+                <li>Mejorar calcio en la cena</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -413,39 +580,45 @@
 
     <section class="section">
       <div class="container">
-        <div class="supp-grid">
+        <div class="supp-shell">
           <div class="supp-copy">
             <span class="eyebrow">La diferencia clave</span>
-            <h2>Dieta y suplementos, por fin en el mismo lenguaje.</h2>
-            <p>Muchas apps obligan a interpretar datos parciales. VeganTrack une ambas fuentes para que la lectura del d&iacute;a sea honesta y la acci&oacute;n tambi&eacute;n.</p>
-            <ul class="check">
-              <li>No hace falta adivinar si el suplemento ya compensa lo que faltaba en la comida.</li>
-              <li>La interfaz deja claro qu&eacute; parte viene de dieta y qu&eacute; parte viene del stack diario.</li>
-              <li>B12, D3, omega-3, hierro, zinc, calcio o yodo encajan sin fricci&oacute;n.</li>
-            </ul>
-            <div class="pill-row"><span class="pill">Vitamina B12</span><span class="pill">Vitamina D3</span><span class="pill">Omega-3 DHA</span><span class="pill">Hierro</span><span class="pill">Zinc</span><span class="pill">Calcio</span><span class="pill">Yodo</span></div>
-          </div>
-          <div class="supp-box">
-            <div class="supp-top"><div><strong>Micronutrientes de hoy</strong><span>Una sola lectura, dos fuentes</span></div><span>Resumen real</span></div>
-            <div class="supp-cols">
-              <div class="supp-col">
-                <h3>Dieta</h3>
-                <ul class="micro">
-                  <li><div><span>Vitamina B12</span><span>22%</span></div><div class="bar"><span style="width:22%;"></span></div></li>
-                  <li><div><span>Hierro</span><span>78%</span></div><div class="bar"><span class="warn" style="width:78%;"></span></div></li>
-                  <li><div><span>Calcio</span><span>65%</span></div><div class="bar"><span class="warn" style="width:65%;"></span></div></li>
-                </ul>
-              </div>
-              <div class="supp-col">
-                <h3>Suplementos</h3>
-                <ul class="micro">
-                  <li><div><span>Vitamina B12</span><span>+78%</span></div><div class="bar"><span style="width:78%;"></span></div></li>
-                  <li><div><span>Vitamina D</span><span>+100%</span></div><div class="bar"><span style="width:100%;"></span></div></li>
-                  <li><div><span>Omega-3 DHA</span><span>+20%</span></div><div class="bar"><span style="width:20%;"></span></div></li>
-                </ul>
-              </div>
+            <h2>Dieta y suplementos, en el mismo idioma y en la misma pantalla.</h2>
+            <p>Muchas apps te obligan a interpretar piezas sueltas. VeganTrack une ambas fuentes para que el total del d&iacute;a sea real y no una media verdad.</p>
+            <div class="supp-pills">
+              <span>Vitamina B12</span>
+              <span>Vitamina D3</span>
+              <span>Omega-3 DHA</span>
+              <span>Hierro</span>
+              <span>Zinc</span>
+              <span>Calcio</span>
+              <span>Yodo</span>
             </div>
-            <div class="supp-total"><div><span>Total diario</span><p>Lectura final tras sumar dieta y suplementos</p></div><strong>92%</strong></div>
+          </div>
+          <div class="supp-board">
+            <div class="supp-card">
+              <div class="supp-head"><strong>Dieta</strong><span>Base del d&iacute;a</span></div>
+              <ul class="nutrition-list">
+                <li><div class="nutrient-row"><span>B12</span><span>22%</span></div><div class="nutrient-track"><span class="nutrient-fill" style="width:22%;"></span></div></li>
+                <li><div class="nutrient-row"><span>Hierro</span><span>78%</span></div><div class="nutrient-track"><span class="nutrient-fill warn" style="width:78%;"></span></div></li>
+                <li><div class="nutrient-row"><span>Calcio</span><span>65%</span></div><div class="nutrient-track"><span class="nutrient-fill warn" style="width:65%;"></span></div></li>
+              </ul>
+            </div>
+            <div class="supp-card">
+              <div class="supp-head"><strong>Suplementos</strong><span>Lo que completas</span></div>
+              <ul class="nutrition-list">
+                <li><div class="nutrient-row"><span>B12</span><span>+78%</span></div><div class="nutrient-track"><span class="nutrient-fill" style="width:78%;"></span></div></li>
+                <li><div class="nutrient-row"><span>Vitamina D</span><span>+100%</span></div><div class="nutrient-track"><span class="nutrient-fill" style="width:100%;"></span></div></li>
+                <li><div class="nutrient-row"><span>Omega-3 DHA</span><span>+20%</span></div><div class="nutrient-track"><span class="nutrient-fill" style="width:20%;"></span></div></li>
+              </ul>
+            </div>
+            <div class="supp-total">
+              <div>
+                <strong>92%</strong>
+                <p>Total real del d&iacute;a tras sumar comida y suplementos.</p>
+              </div>
+              <span class="install-chip">Lectura final</span>
+            </div>
           </div>
         </div>
       </div>
@@ -454,15 +627,35 @@
     <section class="section" id="como-funciona">
       <div class="container">
         <div class="section-intro">
-          <span class="eyebrow">C&oacute;mo funciona</span>
-          <h2>Un flujo corto, claro y pensado para volver cada d&iacute;a.</h2>
-          <p>La landing ahora comunica mejor la secuencia real del producto: empezar r&aacute;pido, registrar sin fricci&oacute;n y obtener una lectura accionable.</p>
+          <span class="eyebrow">Uso diario</span>
+          <h2>Una rutina corta, móvil y fácil de repetir.</h2>
+          <p>La app está pensada para acompañarte cada día con pocos pasos y una lectura clara al final.</p>
         </div>
         <div class="steps">
-          <article class="step card"><div class="num">1</div><h3>Crea tu perfil</h3><p>Introduce tus datos b&aacute;sicos y obt&eacute;n objetivos adaptados a tu contexto.</p></article>
-          <article class="step card"><div class="num">2</div><h3>Registra alimentos</h3><p>Escanea, busca o crea comidas personalizadas sin perder tiempo.</p></article>
-          <article class="step card"><div class="num">3</div><h3>Marca suplementos</h3><p>Con un gesto sumas B12, D3, hierro u otros micros al total real del d&iacute;a.</p></article>
-          <article class="step card"><div class="num">4</div><h3>Lee tu resultado</h3><p>El dashboard y el VeganScore convierten todos esos datos en decisiones simples.</p></article>
+          <article class="step">
+            <div class="step-num">1</div>
+            <span class="step-label">Abrir</span>
+            <h3>Entras desde el icono o el navegador</h3>
+            <p>Rápida, directa y lista para volver a ella cada día desde el teléfono.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">2</div>
+            <span class="step-label">Registrar</span>
+            <h3>A&ntilde;ades comida sin fricci&oacute;n</h3>
+            <p>Escaneo, b&uacute;squeda o recetas habituales. El gesto tiene que ser breve y natural.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">3</div>
+            <span class="step-label">Marcar</span>
+            <h3>Confirmas suplementos en un toque</h3>
+            <p>B12, D3 u otros micronutrientes pasan a formar parte del total real del d&iacute;a.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">4</div>
+            <span class="step-label">Entender</span>
+            <h3>Lees el d&iacute;a y sigues con tu vida</h3>
+            <p>La app te da claridad para decidir y seguir con tu día sin añadir fricción innecesaria.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -471,18 +664,18 @@
       <div class="container">
         <div class="section-intro">
           <span class="eyebrow">Preguntas</span>
-          <h2>Preguntas frecuentes, con el mismo tono limpio que el resto de la experiencia.</h2>
-          <p>Mantengo el contenido funcional de la landing, pero con un tratamiento visual mucho m&aacute;s coherente con una marca que quiere sentirse premium y fiable.</p>
+          <h2>Lo esencial, contado con claridad.</h2>
+          <p>Respuestas breves para entender cómo encaja VeganTrack en una rutina real desde el móvil.</p>
         </div>
         <div class="faq-grid">
-          <details class="faq-item"><summary>&iquest;Es gratis VeganTrack?</summary><p>S&iacute;. VeganTrack es gratis, sin anuncios y sin suscripci&oacute;n obligatoria para empezar.</p></details>
-          <details class="faq-item"><summary>&iquest;C&oacute;mo s&eacute; si tengo d&eacute;ficit de B12?</summary><p>La app suma lo que aportan alimentos y suplementos, para que veas si llegas al objetivo diario de forma realista.</p></details>
-          <details class="faq-item"><summary>&iquest;Tengo que instalar algo?</summary><p>No. Funciona en el navegador y tambi&eacute;n puede a&ntilde;adirse a la pantalla de inicio como web app.</p></details>
-          <details class="faq-item"><summary>&iquest;Qu&eacute; micronutrientes trackea?</summary><p>B12, hierro, zinc, calcio, vitamina D y omega-3: justo los nutrientes que m&aacute;s preocupan en dietas plant-based.</p></details>
-          <details class="faq-item"><summary>&iquest;Sirve para vegetarianos o flexitarianos?</summary><p>S&iacute;. Aunque est&aacute; dise&ntilde;ada con sensibilidad vegana, tambi&eacute;n es &uacute;til para cualquier persona que quiera vigilar micronutrientes clave.</p></details>
-          <details class="faq-item"><summary>&iquest;De d&oacute;nde salen los datos?</summary><p>La base parte de OpenFoodFacts y puede ampliarse con alimentos y recetas personalizadas creadas por el usuario.</p></details>
-          <details class="faq-item"><summary>&iquest;Puedo guardar recetas habituales?</summary><p>S&iacute;. Puedes crear recetas, calcular porciones y reutilizarlas en el diario con mucha menos fricci&oacute;n.</p></details>
-          <details class="faq-item"><summary>&iquest;Mis datos est&aacute;n seguros?</summary><p>S&iacute;. La arquitectura mantiene tus datos aislados y privados; no se venden a terceros.</p></details>
+          <details class="faq-item"><summary>&iquest;Es gratis VeganTrack?</summary><p>Sí. Puedes empezar gratis y sin anuncios.</p></details>
+          <details class="faq-item"><summary>&iquest;Funciona bien en m&oacute;vil?</summary><p>S&iacute;. De hecho, est&aacute; pensada principalmente para m&oacute;vil y para uso vertical, corto y frecuente.</p></details>
+          <details class="faq-item"><summary>&iquest;Tengo que instalarla desde una tienda?</summary><p>No. Puedes abrirla en el navegador y a&ntilde;adirla a la pantalla de inicio si te encaja.</p></details>
+          <details class="faq-item"><summary>&iquest;Qu&eacute; micronutrientes trackea?</summary><p>B12, hierro, zinc, calcio, vitamina D y omega-3, adem&aacute;s del papel que juegan tus suplementos en el total real.</p></details>
+          <details class="faq-item"><summary>&iquest;Por qu&eacute; importa tanto el tema suplementos?</summary><p>Porque en nutrici&oacute;n vegana diaria el total relevante no es solo lo que comes, sino tambi&eacute;n lo que suplementas.</p></details>
+          <details class="faq-item"><summary>&iquest;Sirve tambi&eacute;n si soy vegetariano?</summary><p>Sí. Aunque está pensada sobre todo para nutrición vegana, la lectura de micronutrientes también puede ser útil fuera del veganismo estricto.</p></details>
+          <details class="faq-item"><summary>&iquest;Puedo guardar recetas o comidas habituales?</summary><p>S&iacute;. La idea es precisamente reducir fricci&oacute;n para que volver cada d&iacute;a sea m&aacute;s natural.</p></details>
+          <details class="faq-item"><summary>&iquest;Mis datos siguen siendo privados?</summary><p>S&iacute;. La app est&aacute; pensada para uso personal y tus datos no se venden a terceros.</p></details>
         </div>
       </div>
     </section>
@@ -491,13 +684,13 @@
       <div class="container">
         <div class="cta-box">
           <span class="eyebrow">Empieza hoy</span>
-          <h2>La dieta plant-based merece una interfaz a su altura.</h2>
-          <p>Abre la app, registra tu d&iacute;a y comprueba en pocos minutos si lo esencial est&aacute; cubierto. Sin ruido, sin anuncios y sin perderte en datos irrelevantes.</p>
+          <h2>Prueba VeganTrack en el m&oacute;vil y empieza a leer tu d&iacute;a con m&aacute;s claridad.</h2>
+          <p>Abre la app, registra lo que comes, marca tus suplementos y comprueba en pocos minutos c&oacute;mo va tu nutrici&oacute;n vegana.</p>
           <div class="btn-row">
-            <a href="https://app.vegantrack.app" class="btn-primary">Abrir VeganTrack <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></a>
-            <a href="#como-funciona" class="btn-secondary">Ver flujo completo</a>
+            <a href="https://app.vegantrack.app" class="btn-primary">Abrir app</a>
+            <a href="https://app.vegantrack.app" class="btn-secondary">A&ntilde;adir a inicio</a>
           </div>
-          <span class="meta">Sin tarjeta de cr&eacute;dito &middot; Sin anuncios &middot; Web app lista para usar</span>
+          <span class="meta-note">Sin anuncios &middot; lista para a&ntilde;adir a inicio &middot; pensada para uso diario</span>
         </div>
       </div>
     </section>
@@ -509,14 +702,17 @@
           <span class="logo-mark" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
           </span>
-          <span class="logo-copy"><strong>VeganTrack</strong><span>Datos antes que opini&oacute;n</span></span>
+          <span class="logo-copy">
+            <strong>VeganTrack</strong>
+            <span>Seguimiento diario</span>
+          </span>
         </a>
         <div class="footer-links">
           <a href="https://app.vegantrack.app">Abrir app</a>
           <a href="/privacidad">Privacidad</a>
           <a href="/terminos">T&eacute;rminos</a>
         </div>
-        <p>&copy; 2026 VeganTrack &middot; Nutrici&oacute;n plant-based con datos reales</p>
+        <p>&copy; 2026 VeganTrack &middot; Nutrici&oacute;n vegana y micronutrientes en tu d&iacute;a a d&iacute;a</p>
       </div>
     </div>
   </footer>
